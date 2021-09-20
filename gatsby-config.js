@@ -5,9 +5,9 @@ const { spaceId, accessToken, snipcart } = process.env;
 
 module.exports = {
   siteMetadata: {
-    title: `OneShopper`,
-    description: `E-Commerce site with Gatsby and React`,
-    author: `@rohitguptab`,
+    title: `DanielJS Brand Website`,
+    description: `A Brand Website For the DanielJS Brand`,
+    author: `DanielJS`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -24,13 +24,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `OneShopper`,
+        name: `DanielJS`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#FBE693`,
+        theme_color: `#FBE693`,
         display: `minimal-ui`,
-        icon: `src/images/oneshopper-logo.png`,
+        icon: `src/images/logo.png`,
       },
     },
     {
