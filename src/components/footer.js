@@ -12,10 +12,10 @@ class Footer extends Component {
                                 <div className="menu-main-container">
                                     <ul id="menu-main" className="menu">
                                         <li><Link to="/about">About</Link></li>
-                                        <li><Link to="/blogs">Blogs</Link></li>
-                                        <li><Link to="/store">Store</Link></li>
+                                        <li><Link to="/blogs">Articles</Link></li>
+                                        {/* <li><Link to="/store">Store</Link></li> */}
                                         <li><Link to="/contact-us">Contact</Link></li>
-                                        <li><Link to="/copyright">Copyright</Link></li>
+                                        {/* <li><Link to="/copyright">Copyright</Link></li> */}
                                     </ul>
                                 </div>
                             </section>

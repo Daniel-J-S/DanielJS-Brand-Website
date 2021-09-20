@@ -16,20 +16,20 @@ const Header = ({ siteTitle }) => (
     <div className="container">
       <div className="row">
         <div className="col-sm-12 col-md-4 align-self-center">
-          <Link className="header-logo" to="/"><img src={logo} alt="logo"></img></Link>
+          <Link className="header-logo" to="/"><img src={logo} alt="logo" style={{height: 65, width: 65}}></img></Link>
         </div>
         <div className="col-sm-12 col-md-8 align-self-center">
           <nav>
-            <ul className="navbar-nav mr-auto">
+            <ul className="navbar-nav ml-auto light">
               <li className="nav-item active">
                 <Link className="nav-link" to="/">Home</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/blogs">Blogs</Link>
+                <Link className="nav-link" to="/blogs">Articles</Link>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link className="nav-link" to="/store">Store</Link>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <Link className="nav-link" to="/about">About</Link>
               </li>
@@ -38,9 +38,9 @@ const Header = ({ siteTitle }) => (
               </li>
             </ul>
             <div className="header-cart">
-              <Link className="Header__summary snipcart-summary snipcart-checkout" to="#">
+              {/* <Link className="Header__summary snipcart-summary snipcart-checkout" to="#">
                 <i className="fas fa-cart-plus"></i>
-              </Link>
+              </Link> */}
               {/* <button class="snipcart-add-item"
                 data-item-id="starry-night"
                 data-item-price="79.99"

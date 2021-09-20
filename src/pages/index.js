@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Banner from "../components/banner"
 import LatestBlogs from "../components/latestBlog"
-import Countdown from "../components/countdown"
+// import Countdown from "../components/countdown"
 import StarRatingComponent from 'react-star-rating-component';
 import { graphql } from "gatsby";
 
@@ -64,11 +64,11 @@ const IndexPage = data => (
     <SEO title="Home" keywords={[`gatsby`, `oneshopper`, `react`, `Ecommerce`]} />
     <Banner BannerData={data.data.allContentfulHeaderBanner.edges} />
     <LatestBlogs data={data.data.allContentfulBlogs} />
-    <div className="container">
+    {/* <div className="container">
       <div className="text-center"><h2 className="with-underline">Latest Items</h2></div>
       <IndexPost data={data}></IndexPost>
-    </div>
-    <Countdown data={data.data.contentfulDealCountDown} />
+    </div> */}
+    {/* <Countdown data={data.data.contentfulDealCountDown} /> */}
   </Layout>
 )
 
