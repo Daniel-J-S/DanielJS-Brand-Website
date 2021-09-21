@@ -9,6 +9,7 @@ export default class LatestBlogs extends Component {
 
         return (
             <div className="container mt-5">
+                <hr />
                 <div className="text-center"><h2>Latest Articles</h2></div>
                 <ul className="latest-blog">
                     {data.edges.map(items => (
@@ -21,6 +22,7 @@ export default class LatestBlogs extends Component {
                         </li>
                     ))}
                 </ul>
+                <hr />
             </div>
         );
     }

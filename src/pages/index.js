@@ -4,6 +4,7 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Banner from "../components/banner"
+import SocialIcons from "../components/social-icons"
 import LatestBlogs from "../components/latestBlog"
 // import Countdown from "../components/countdown"
 import StarRatingComponent from 'react-star-rating-component'
@@ -64,7 +65,7 @@ class IndexPost extends React.Component {
 const IndexPage = data => {
     const [bioLength, setBioLength] = useState(3);
     return (
-    <Layout>
+    <Layout location={data.location}>
       <SEO title="Home" keywords={[`gatsby`, `coding`, `react`, `learn to code`]} />
       <Banner BannerData={data.data.allContentfulHeaderBanner.edges} />
       <div className="container mb-5">
@@ -80,9 +81,39 @@ const IndexPage = data => {
           <p className="p-3 mb-3">
             {bio[bioLength]}
           </p>
+            <h3 className="mt-5">Connect With Daniel</h3>
+            <SocialIcons />
+            <div className="video-wrapper mt-5">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/d7b60PI8VLI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
           </div>
         </div>
-      <LatestBlogs data={data.data.allContentfulBlogs} />
+        <div className="Blog-section">
+          <LatestBlogs data={data.data.allContentfulBlogs} />
+        </div>
+        <div className="Contact-us mt-5">
+            <div className="container mt-5">
+              <h3 className="mt-5" id="contact">Contact Me</h3>
+                <form action="https://formspree.io/rohitguptab33@gmail.com" method="POST" name="contact">
+                    <div>
+                        <label>Your name
+                        <input type="text" name="name" required /></label>
+                    </div>
+                    <div>
+                        <label>Your Email: 
+                        <input type="email" name="email" required /></label>
+                    </div>
+                    <div>
+                        <label>Message: 
+                        <textarea name="message" required></textarea></label>
+                    </div>
+                    <div>
+                        <button type="submit" required>Send</button>
+                    </div>
+                </form>
+            </div>
+          </div>
+      
       {/* <div className="container">
         <div className="text-center"><h2 className="with-underline">Latest Items</h2></div>
         <IndexPost data={data}></IndexPost>

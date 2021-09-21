@@ -71,7 +71,7 @@ class BlogsPost extends React.Component {
 
 const Blogs = data => (
 
-  <Layout>
+  <Layout location={data.location}>
     <SEO title="Blogs" keywords={[`gatsby`, `blogs`, `react`]} />
     <div className="container blog-page">
       <BlogsPost data={data}></BlogsPost>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "gatsby"
+import SocialIcons from "./social-icons";
 
 class Footer extends Component {
     render() {
@@ -21,6 +22,7 @@ class Footer extends Component {
                             </section>
                         </div>
                         <div className="footer-bottom social-right-menu ">
+                        <SocialIcons />
                             <div className="site-info">
                                 © {new Date().getFullYear()} DanielJS. All rights reserved.
                             </div>
