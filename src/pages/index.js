@@ -8,7 +8,7 @@ import LatestBlogs from "../components/latestBlog"
 // import Countdown from "../components/countdown"
 import StarRatingComponent from 'react-star-rating-component'
 import { graphql } from "gatsby"
-import bio from "../utils/bio.json"
+import bio from "../data/bio.json"
 
 
 class IndexPost extends React.Component {
@@ -69,17 +69,17 @@ const IndexPage = data => {
       <Banner BannerData={data.data.allContentfulHeaderBanner.edges} />
       <div className="container mb-5">
         <div className="text-center">
-          <p className="p-3 mb-3">
-            {bio[bioLength]}
-          </p>
           <div className="with-underline p-3 mb-5 text-center">
             <small>Set Bio Length</small>
             <div className="mt-3">
-              <button className={`btn btn-sm btn-${bioLength === 1 ? 'dark' : 'outline-dark'} ml-4`} onClick={() => setBioLength(1)}>Small</button>
+              <button className={`btn btn-sm btn-${bioLength === 1 ? 'dark' : 'outline-dark'} ml-4`} onClick={() => setBioLength(1)}>Short</button>
               <button className={`btn btn-sm btn-${bioLength === 2 ? 'dark' : 'outline-dark'} ml-4`} onClick={() => setBioLength(2)}>Medium</button>
-              <button className={`btn btn-sm btn-${bioLength === 3 ? 'dark' : 'outline-dark'} ml-4`} onClick={() => setBioLength(3)}>Large</button>
+              <button className={`btn btn-sm btn-${bioLength === 3 ? 'dark' : 'outline-dark'} ml-4`} onClick={() => setBioLength(3)}>Long</button>
             </div>
           </div>
+          <p className="p-3 mb-3">
+            {bio[bioLength]}
+          </p>
           </div>
         </div>
       <LatestBlogs data={data.data.allContentfulBlogs} />
