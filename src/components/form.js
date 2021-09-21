@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function Form(props) {
+function Form() {
     const [state, setState] = useState({
         name: "",
         email: "",
@@ -26,13 +26,37 @@ function Form(props) {
             },
             body: encode(state)
         })
-        setState({
+        setState({...state, formSubmitted: true});
+
+        setTimeout(() => setState({
             name: "",
             email: "",
             message: "",
-            formSubmitted: true
-        });
+            formSubmitted: false}), 3000)
     }
+
+    // const [y, setY] = useState(window.scrollY);
+
+    // const handleNavigation = useCallback(
+    // e => {
+    //     const window = e.currentTarget;
+    //     if (y > window.scrollY || y < window.scrollY) {
+    //         console.log('hello')
+    //         setState({...state, formSubmitted: false})
+    //     }
+    //         setY(window.scrollY);
+    //     }, [y]
+    // );
+
+    // useEffect(() => {
+    //     setY(window.scrollY);
+    //     window.addEventListener("scroll", handleNavigation);
+
+    //     return () => {
+    //         window.removeEventListener("scroll", handleNavigation);
+    //     };
+    // }, [handleNavigation]);
+
 
     return (
         <>
