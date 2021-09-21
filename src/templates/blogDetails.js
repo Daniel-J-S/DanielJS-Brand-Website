@@ -5,10 +5,10 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { graphql } from "gatsby";
 
-const disqusShortname = "shopper";
+const disqusShortname = "danieljs";
 
 const BlogDetails = data => (
-    < Layout >
+    <Layout>
         <SEO title={data.data.contentfulBlogs.title} keywords={[`gatsby`, `ecommerce`, `react`, `contentFul`, `Snipcart`]} />
         <div className="blogs-page">
             <div className="post-thumbnail">
@@ -41,7 +41,7 @@ const BlogDetails = data => (
                 />
             </div>
         </div>
-    </Layout >
+    </Layout>
 )
 
 export default BlogDetails

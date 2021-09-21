@@ -8,8 +8,8 @@ export default class LatestBlogs extends Component {
         const { data } = this.props;
 
         return (
-            <div className="container">
-                <div className="text-center"><h2 className="with-underline">Latest Articles</h2></div>
+            <div className="container mt-5">
+                <div className="text-center"><h2>Latest Articles</h2></div>
                 <ul className="latest-blog">
                     {data.edges.map(items => (
                         <li key={items.node.id}>

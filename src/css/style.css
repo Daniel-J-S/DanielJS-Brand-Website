@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i,600,700,700i&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;800&display=swap');
 
-html{font-family:'Josefin Sans',sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+html{font-family:'Maven Pro', sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
 body{margin:0;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 article,
 aside,
@@ -148,7 +148,7 @@ pre tt:after{content:""}
 }
 
 
-*{font-family:'Josefin Sans',sans-serif;}
+*{font-family:'Maven Pro', sans-serif;}
 .product-main .details_List .gatsby-image-wrapper{height:200px;}
 .img{outline:none;}
 .product-main .details_List{margin:0 0 30px 0;-webkit-box-shadow:0 5px 10px -3px rgba(0,0,0,0.25);box-shadow:0 5px 10px -3px rgba(0,0,0,0.25);-webkit-transition:-webkit-box-shadow 0.2s;-o-transition:box-shadow 0.2s;transition:box-shadow 0.2s,-webkit-box-shadow 0.2s;border:1px solid #cccccc73;}
@@ -157,12 +157,12 @@ pre tt:after{content:""}
 .product-main .details_List .details_inner h2{font-size:24px;color:#333;margin-bottom:10px;}
 .product-main .details_List .details_inner h2 a{color:#333;}
 .snipcart-add-item{border:1px solid #ef3d56;padding:10px 15px;display:inline-block;font-size:12px;color:#fff!important;border-radius:5px;font-weight:600;background:#ef3d56;text-decoration:none!important;text-transform:uppercase;}
-.product-details{}
+.product-details {}
 .product-details .gatsby-image-wrapper{height:500px;}
 
 /* header css */
-header.site-header{width:100%;background:#ffffff; z-index:9;padding:5px 0;}
-ul.navbar-nav.mr-auto li{margin-bottom:0;}
+header.site-header{width:100%; background:#ffffff; z-index:9;padding:5px 0;}
+ul.navbar-nav.mr-auto li{ margin-bottom:0;}
 main{margin:0;}
 .header-cart{width:80px;}
 .header-cart *{color:#fff;margin:0;}
@@ -175,8 +175,8 @@ header nav ul.navbar-nav li{margin:0 10px;}
 header nav ul.navbar-nav li a{color: #000000;}
 
 /* header css */
-footer.site-footer{background:#333;padding:0;text-align:center;}
-footer.site-footer *{color:#fff;}
+footer.site-footer{background:#fff;padding:0;text-align:center;}
+footer.site-footer *{color:#000;}
 .no-image{height:200px;background:#ef3d5675;display:flex;justify-content:center;flex-direction:column;text-align:center;color:#fff;text-shadow:1px 1px 5px #000;}
 .snipcart-add-item i.fas{margin-right:8px;}
 .product-main .details_List .details_inner p{font-size:16px;}
@@ -213,12 +213,12 @@ span.price{font-weight:bold;font-size:30px;}
 .slick-slider .slick-list div img{width:100%;margin:0;}
 .slick-slider .slick-list .site-Banner:before{content:"";background:#0000004a;position:absolute;top:0;left:0;bottom:0;right:0;width:100%;z-index:1;height:calc(100% - 10px);}
 .site-Banner .Banner-details .sub-title{color:#fff;text-shadow:2px 2px 3px #000;font-size:28px;}
-.site-Banner .Banner-details a{background: #1e90ff; color:#fff;text-decoration:none;padding:12px 25px;border-radius:3px;display:inline-block;letter-spacing:1px;}
+.site-Banner .Banner-details a{background: #000000; color:#fff;text-decoration:none;padding:12px 25px;border-radius:3px;display:inline-block;letter-spacing:1px;}
 .site-Banner .Banner-details >div{max-width:70%;}
 .store-page .product-main{margin-top:30px;}
 .details-page .product-details{margin-top:30px;}
 .with-underline{position:relative;text-align:left;display:inline-block;margin-bottom:40px;padding-bottom:8px;}
-.with-underline:after{content:"";position:absolute;height:2px;width:100%;left:0;right:0;background:#ef3d56;top:100%;}
+.with-underline:after{content:"";position:absolute;height:2px;width:100%;left:0;right:0;background:#000000;top:100%;}
 
 /* slider css */
 .countdown-section{position:relative;margin-bottom:0;}
@@ -307,7 +307,7 @@ footer.site-footer ul{margin:0;}
 @media (max-width:767px){
   header.site-header .align-self-center{align-self:center!important;text-align:left;}
   a.header-logo img{width:160px;}
-  header nav ul.navbar-nav{justify-content:left;}
+  header nav ul.navbar-nav{justify-content:left; margin: 0 !important;}
   ul.latest-blog li{width:100%!important;margin-bottom:15px;display:block!important;}
   ul.latest-blog{display:block;}
   header nav{display:inline-block;width:100%;}

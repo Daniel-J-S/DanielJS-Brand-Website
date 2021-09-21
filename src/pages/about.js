@@ -48,7 +48,7 @@ class About extends React.Component {
                     <p>Use the Gatsby CLI to Clone this site.</p>
                     <code>
                         # Clone this Repositories<br></br>
-                        gatsby new OneShopper https://github.com/Rohitguptab/OneShopper.git
+                        gatsby new OneShopper https://github.com/Rohitguptab/js.git
                     </code>
                     <p>Checkout my below blog how to Import and Export data from ContentFul</p>
                     <p><a href="https://rohitgupta.netlify.app/import-and-export-data-with-contentful-cli" target="_blank" rel="noopener noreferrer">https://rohitgupta.netlify.app/import-and-export-data-with-contentful-cli</a></p>

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
@@ -6,8 +6,10 @@ import SEO from "../components/seo"
 import Banner from "../components/banner"
 import LatestBlogs from "../components/latestBlog"
 // import Countdown from "../components/countdown"
-import StarRatingComponent from 'react-star-rating-component';
-import { graphql } from "gatsby";
+import StarRatingComponent from 'react-star-rating-component'
+import { graphql } from "gatsby"
+import bio from "../utils/bio.json"
+
 
 class IndexPost extends React.Component {
   render() {
@@ -59,18 +61,36 @@ class IndexPost extends React.Component {
   }
 }
 
-const IndexPage = data => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `oneshopper`, `react`, `Ecommerce`]} />
-    <Banner BannerData={data.data.allContentfulHeaderBanner.edges} />
-    <LatestBlogs data={data.data.allContentfulBlogs} />
-    {/* <div className="container">
-      <div className="text-center"><h2 className="with-underline">Latest Items</h2></div>
-      <IndexPost data={data}></IndexPost>
-    </div> */}
-    {/* <Countdown data={data.data.contentfulDealCountDown} /> */}
-  </Layout>
-)
+const IndexPage = data => {
+    const [bioLength, setBioLength] = useState(3);
+    return (
+    <Layout>
+      <SEO title="Home" keywords={[`gatsby`, `coding`, `react`, `learn to code`]} />
+      <Banner BannerData={data.data.allContentfulHeaderBanner.edges} />
+      <div className="container mb-5">
+        <div className="text-center">
+          <p className="p-3 mb-3">
+            {bio[bioLength]}
+          </p>
+          <div className="with-underline p-3 mb-5 text-center">
+            <small>Set Bio Length</small>
+            <div className="mt-3">
+              <button className={`btn btn-sm btn-${bioLength === 1 ? 'dark' : 'outline-dark'} ml-4`} onClick={() => setBioLength(1)}>Small</button>
+              <button className={`btn btn-sm btn-${bioLength === 2 ? 'dark' : 'outline-dark'} ml-4`} onClick={() => setBioLength(2)}>Medium</button>
+              <button className={`btn btn-sm btn-${bioLength === 3 ? 'dark' : 'outline-dark'} ml-4`} onClick={() => setBioLength(3)}>Large</button>
+            </div>
+          </div>
+          </div>
+        </div>
+      <LatestBlogs data={data.data.allContentfulBlogs} />
+      {/* <div className="container">
+        <div className="text-center"><h2 className="with-underline">Latest Items</h2></div>
+        <IndexPost data={data}></IndexPost>
+      </div> */}
+      {/* <Countdown data={data.data.contentfulDealCountDown} /> */}
+    </Layout>
+  )
+}
 
 export default IndexPage
 
