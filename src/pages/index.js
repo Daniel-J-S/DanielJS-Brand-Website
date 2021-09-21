@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Form from "../components/form"
 import Banner from "../components/banner"
 import SocialIcons from "../components/social-icons"
 import LatestBlogs from "../components/latestBlog"
@@ -84,7 +85,7 @@ const IndexPage = data => {
             <h3 className="mt-5">Connect With Daniel</h3>
             <SocialIcons />
             <div className="video-wrapper mt-5">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/d7b60PI8VLI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/d7b60PI8VLI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             </div>
           </div>
         </div>
@@ -94,23 +95,7 @@ const IndexPage = data => {
         <div className="Contact-us mt-5">
             <div className="container mt-5">
               <h3 className="mt-5" id="contact">Contact Me</h3>
-                <form action="https://formspree.io/rohitguptab33@gmail.com" method="POST" name="contact">
-                    <div>
-                        <label>Your name
-                        <input type="text" name="name" required /></label>
-                    </div>
-                    <div>
-                        <label>Your Email: 
-                        <input type="email" name="email" required /></label>
-                    </div>
-                    <div>
-                        <label>Message: 
-                        <textarea name="message" required></textarea></label>
-                    </div>
-                    <div>
-                        <button type="submit" required>Send</button>
-                    </div>
-                </form>
+                <Form />
             </div>
           </div>
       

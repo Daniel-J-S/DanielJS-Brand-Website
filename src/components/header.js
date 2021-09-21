@@ -10,16 +10,13 @@ import scrollTo from 'gatsby-plugin-smoothscroll'
 const Header = ({ siteTitle, location}) => {
   function handleNav() {
     if(location && location.pathname !== '/') {
-      navigate('/');
-      setTimeout(() => scrollTo('#contact'), 10)
+      navigate('/#contact');
     } else {
       scrollTo('#contact')
     }
   }
   return (
     <header className="site-header">
-      <SEO>
-      </SEO>
       <div className="container">
         <div className="row">
           <div className="col-sm-12 col-md-4 align-self-center">

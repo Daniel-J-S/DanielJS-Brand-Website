@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 import Img from "gatsby-image";
+import scrollTo from 'gatsby-plugin-smoothscroll';
 import { Link } from "gatsby";
 
 var settings = {
@@ -29,7 +30,7 @@ export default class Banner extends Component {
                   <div>
                     <span className="sub-title">{items.node.subHeading}</span>
                     <h1>{items.node.title}</h1>
-                    <Link to="/contact-us">Contact Me</Link>
+                    <button className="btn btn-dark" onClick={() => scrollTo('#contact')}>Contact Me</button>
                   </div>
                 </div>
               </div>
