@@ -90,7 +90,7 @@ const IndexPage = data => {
           </div>
         </div>
         <div className="Blog-section">
-          <LatestBlogs data={data.data.allContentfulBlogs} />
+          {/* <LatestBlogs data={data.data.allContentfulBlogs} /> */}
         </div>
         <div className="Contact-us mt-5">
             <div className="container mt-5">
