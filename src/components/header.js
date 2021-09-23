@@ -1,20 +1,20 @@
 import { Link, navigate } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import SEO from "../components/seo"
 import logo from "../images/logo.png"
 import scrollTo from 'gatsby-plugin-smoothscroll'
 
 
 
 const Header = ({ siteTitle, location}) => {
-  function handleNav() {
+  function handleNav(id) {
     if(location && location.pathname !== '/') {
-      navigate('/#contact');
+      navigate(`/#${id}`);
     } else {
-      scrollTo('#contact')
+      scrollTo(`#${id}`)
     }
   }
+
   return (
     <header className="site-header">
       <div className="container">
@@ -25,14 +25,17 @@ const Header = ({ siteTitle, location}) => {
           <div className="col-sm-12 col-md-8 align-self-center">
             <nav>
               <ul className="navbar-nav ml-auto light">
-                <li className="nav-item active">
-                  <Link className="nav-link" to="/">Home</Link>
-                </li>
-                {/* <li className="nav-item">
-                  <Link className="nav-link" to="/blogs">Articles</Link>
-                </li> */}
+                {
+                  location && location.pathname !== '/' &&
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/">Home</Link>
+                  </li>
+                }
                 <li className="nav-item">
-                  <span className="nav-link" onClick={handleNav}>Contact Me</span>
+                  <span className="nav-link" onClick={() => handleNav('articles')}>Articles</span>
+                </li>
+                <li className="nav-item">
+                  <span className="nav-link" onClick={() => handleNav('contact')}>Contact Me</span>
                 </li>
               </ul>
               <div className="header-cart">

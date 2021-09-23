@@ -8,9 +8,14 @@ export default class LatestBlogs extends Component {
         const { data } = this.props;
 
         return (
-            <div className="container mt-5">
+            <div className="container mt-5 mb-5" id="articles">
                 <hr />
-                <div className="text-center"><h2>Latest Articles</h2></div>
+                <div className="pt-5 pb-5">
+                    <h2 className="mb-5">
+                        <Link className="text-dark" to="/blogs">
+                            Latest Articles
+                        </Link>
+                    </h2>
                 <ul className="latest-blog">
                     {data.edges.map(items => (
                         <li key={items.node.id}>
@@ -22,6 +27,7 @@ export default class LatestBlogs extends Component {
                         </li>
                     ))}
                 </ul>
+                </div>
                 <hr />
             </div>
         );

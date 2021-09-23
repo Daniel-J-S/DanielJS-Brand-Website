@@ -8,7 +8,7 @@ import { graphql } from "gatsby";
 const disqusShortname = "danieljs";
 
 const BlogDetails = data => (
-    <Layout>
+    <Layout location={data.location}>
         <SEO title={data.data.contentfulBlogs.title} keywords={[`gatsby`, `ecommerce`, `react`, `contentFul`, `Snipcart`]} />
         <div className="blogs-page">
             <div className="post-thumbnail">

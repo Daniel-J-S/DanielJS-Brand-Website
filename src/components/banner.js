@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 import Img from "gatsby-image";
-import scrollTo from 'gatsby-plugin-smoothscroll';
-import { Link } from "gatsby";
 
 var settings = {
   dots: true,
