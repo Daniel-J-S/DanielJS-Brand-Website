@@ -30,7 +30,7 @@ export default class Banner extends Component {
                   <div>
                     <span className="sub-title">{items.node.subHeading}</span>
                     <h1>{items.node.title}</h1>
-                    <button className="btn btn-dark" onClick={() => scrollTo('#contact')}>Contact Me</button>
+                    {/* <button className="btn btn-dark" onClick={() => scrollTo('#contact')}>Contact Me</button> */}
                   </div>
                 </div>
               </div>

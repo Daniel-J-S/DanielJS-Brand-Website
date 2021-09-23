@@ -32,7 +32,7 @@ const Header = ({ siteTitle, location}) => {
                   <Link className="nav-link" to="/blogs">Articles</Link>
                 </li> */}
                 <li className="nav-item">
-                  <span className="nav-link" onClick={handleNav}>Contact</span>
+                  <span className="nav-link" onClick={handleNav}>Contact Me</span>
                 </li>
               </ul>
               <div className="header-cart">
