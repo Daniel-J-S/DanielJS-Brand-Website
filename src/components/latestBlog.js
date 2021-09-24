@@ -8,10 +8,10 @@ export default class LatestBlogs extends Component {
         const { data } = this.props;
 
         return (
-            <div className="container mt-5 mb-5" id="articles">
+            <div className="container mt-5 mb-3" id="articles">
                 <hr />
                 <div className="pt-5 pb-5">
-                    <h2 className="mb-5">
+                    <h2 className="mb-3">
                         <Link className="text-dark" to="/blogs">
                             Latest Articles
                         </Link>

@@ -93,7 +93,7 @@ const IndexPage = data => {
           <LatestBlogs data={data.data.allContentfulBlogs} />
         </div>
         <div className="Contact-us mt-5">
-            <div className="container mt-5">
+            <div className="container mt-3">
               <h3 className="mt-5" id="contact">Contact Me</h3>
                 <Form />
             </div>
