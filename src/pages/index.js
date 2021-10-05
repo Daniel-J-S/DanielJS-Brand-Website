@@ -1,16 +1,18 @@
-import React, { useState } from "react"
-import { Link } from "gatsby"
-import Img from "gatsby-image"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Form from "../components/form"
-import Banner from "../components/banner"
-import SocialIcons from "../components/social-icons"
-import LatestBlogs from "../components/latestBlog"
-// import Countdown from "../components/countdown"
-import StarRatingComponent from 'react-star-rating-component'
-import { graphql } from "gatsby"
-import bio from "../data/bio.json"
+import React, { useState } from 'react';
+import { Link } from 'gatsby';
+import Img from 'gatsby-image';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import Form from '../components/form';
+import Banner from '../components/banner';
+import SocialIcons from '../components/social-icons';
+import LatestBlogs from '../components/latestBlog';
+import Posts from '../components/Posts';
+// import Countdown from '../components/countdown';
+import StarRatingComponent from 'react-star-rating-component';
+import { graphql } from 'gatsby';
+import bio from '../data/bio.json';
+import algorithmChallengeVideos from '../data/algorithm-challenge-videos.json';
 
 
 class IndexPost extends React.Component {
@@ -92,18 +94,16 @@ const IndexPage = data => {
         <div className="Blog-section">
           <LatestBlogs data={data.data.allContentfulBlogs} />
         </div>
+        <div className="Blog-section">
+          <Posts data={algorithmChallengeVideos} title="My Videos" />
+        </div>
         <div className="Contact-us mt-5">
             <div className="container mt-3">
               <h3 className="mt-5" id="contact">Contact Me</h3>
                 <Form />
             </div>
-          </div>
-      
-      {/* <div className="container">
-        <div className="text-center"><h2 className="with-underline">Latest Items</h2></div>
-        <IndexPost data={data}></IndexPost>
-      </div> */}
-      {/* <Countdown data={data.data.contentfulDealCountDown} /> */}
+        </div>
+  
     </Layout>
   )
 }

@@ -13,7 +13,7 @@ export default class LatestBlogs extends Component {
                 <div className="pt-5 pb-5">
                     <h2 className="mb-3">
                         <Link className="text-dark" to="/blogs">
-                            Latest Articles
+                            My Articles
                         </Link>
                     </h2>
                 <ul className="latest-blog">
