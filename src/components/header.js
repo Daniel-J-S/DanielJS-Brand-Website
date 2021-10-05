@@ -35,6 +35,9 @@ const Header = ({ siteTitle, location}) => {
                   <span className="nav-link" onClick={() => handleNav('articles')}>Articles</span>
                 </li>
                 <li className="nav-item">
+                  <span className="nav-link" onClick={() => handleNav('videos')}>Videos</span>
+                </li>
+                <li className="nav-item">
                   <span className="nav-link" onClick={() => handleNav('contact')}>Contact Me</span>
                 </li>
               </ul>
