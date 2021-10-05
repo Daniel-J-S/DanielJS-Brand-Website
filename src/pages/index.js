@@ -7,7 +7,7 @@ import Form from '../components/form';
 import Banner from '../components/banner';
 import SocialIcons from '../components/social-icons';
 import LatestBlogs from '../components/latestBlog';
-import Posts from '../components/Posts';
+import Posts from '../components/posts';
 // import Countdown from '../components/countdown';
 import StarRatingComponent from 'react-star-rating-component';
 import { graphql } from 'gatsby';
