@@ -33,7 +33,7 @@ export default function Posts (props) {
     return (
         <div className="container mt-5 mb-3" id="articles">
             <div className="pt-5 pb-5 mb-5">
-                <h2 className="mb-5 text-center">
+                <h2 className="mb-5">
                     {props.title}
                 </h2>
                 <div className="latest-posts mb-1">
