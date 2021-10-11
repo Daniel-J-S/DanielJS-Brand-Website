@@ -26,9 +26,8 @@ export default class Banner extends Component {
                 <Img sizes={items.node.image.fluid} />
                 <div className="Banner-details">
                   <div>
-                    <span className="sub-title">{items.node.subHeading}</span>
                     <h1>{items.node.title}</h1>
-                    {/* <button className="btn btn-dark" onClick={() => scrollTo('#contact')}>Contact Me</button> */}
+                    <span className="sub-title">{items.node.subHeading}</span>
                   </div>
                 </div>
               </div>
