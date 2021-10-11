@@ -71,7 +71,7 @@ const IndexPage = data => {
     <Layout location={data.location}>
       <SEO title="Home" keywords={[`gatsby`, `coding`, `react`, `learn to code`]} />
       <Banner BannerData={data.data.allContentfulHeaderBanner.edges} />
-      <div className="container mb-5">
+      <div className="container">
         <div className="text-center">
           <div className="with-underline p-3 mb-5 text-center">
             <small>Set Bio Length</small>
