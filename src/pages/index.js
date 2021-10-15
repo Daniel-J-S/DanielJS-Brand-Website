@@ -91,9 +91,11 @@ const IndexPage = data => {
             </div>
           </div>
         </div>
+        {/* 
+        Commenting out for now until I get more articles
         <div className="Blog-section">
           <LatestBlogs data={data.data.allContentfulBlogs} />
-        </div>
+        </div> */}
         <div className="Blog-section">
           <Posts data={algorithmChallengeVideos} title="My Videos" />
         </div>
