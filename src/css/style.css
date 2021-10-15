@@ -311,6 +311,7 @@ footer.site-footer ul{margin:0;}
 
 /* Media Css */
 @media (max-width:991px){
+  .section-title { text-align: center;}
   .Contact-us{max-width: 45vw;}
   ul.latest-blog li:last-child{display:none;}
   ul.latest-blog li{width:50%;}
