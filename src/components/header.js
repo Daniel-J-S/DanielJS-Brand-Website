@@ -31,9 +31,11 @@ const Header = ({ siteTitle, location}) => {
                     <Link className="nav-link" to="/">Home</Link>
                   </li>
                 }
+                {/* 
+                Removing for now until I get more articles
                 <li className="nav-item">
                   <span className="nav-link" onClick={() => handleNav('articles')}>Articles</span>
-                </li>
+                </li> */}
                 <li className="nav-item">
                   <span className="nav-link" onClick={() => handleNav('videos')}>Videos</span>
                 </li>
