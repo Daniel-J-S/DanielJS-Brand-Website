@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 class Copyright extends React.Component {
     render() {
         return (
-            < Layout >
+            <Layout>
                 <SEO title="Copyright" keywords={[`gatsby`, `Copyright`, `react`]} />
                 <div className="site-About">
                     <div className="container">
@@ -17,7 +17,7 @@ class Copyright extends React.Component {
                         </div>
                     </div>
                 </div>
-            </ Layout>
+            </Layout>
         )
     }
 }
