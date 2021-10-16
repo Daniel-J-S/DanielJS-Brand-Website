@@ -273,7 +273,7 @@ ul.latest-blog li .inner:before{content:"";background:#0000004f;position:absolut
 ul.latest-blog li h2 a{color:#fff;}
 ul.latest-blog li .inner a{position:absolute;left:0;right:0;top:0;bottom:0;z-index:5;}
 .site-Banner .gatsby-image-wrapper{height:500px;}
-.Contact-us{margin:40px auto; max-width: 40vw;}
+.Contact-us{margin:40px auto; max-width: 60vw;}
 .Contact-us form input{width:100%;height:40px;}
 .Contact-us form textarea{width:100%;height:100px;}
 .Contact-us form label{width:100%;}
