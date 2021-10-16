@@ -6,8 +6,7 @@ import SEO from '../components/seo';
 import Form from '../components/form';
 import Banner from '../components/banner';
 import SocialIcons from '../components/social-icons';
-import Posts from '../components/posts';
-import StarRatingComponent from 'react-star-rating-component';
+// import StarRatingComponent from 'react-star-rating-component';
 import { graphql } from 'gatsby';
 import bio from '../data/bio.json';
 
@@ -28,19 +27,18 @@ class IndexPost extends React.Component {
                   <h2>
                     <Link to={`/${items.node.slug}`}>{items.node.name}</Link>
                   </h2>
-                  <StarRatingComponent
+                  {/* <StarRatingComponent
                     name="rate1"
                     starCount={5}
                     value={items.node.rating}
-                  />
+                  /> */}
                   <p>{items.node.details.childMarkdownRemark.excerpt}</p>
                   <div className="row">
                     <div className="col-sm-4 align-self-center">
-                      <span className="price">${items.node.price}</span>
+                      <span className="price"><small>${items.node.price}</small></span>
                     </div>
                     <div className="col-sm-8 text-right align-self-center">
-                      <a
-                        href="#"
+                      <button
                         className="Product snipcart-add-item"
                         data-item-id={items.node.slug}
                         data-item-price={items.node.price}
@@ -49,7 +47,7 @@ class IndexPost extends React.Component {
                         data-item-url={`/`}
                       >
                         <i className="fas fa-shopping-bag" />Add to Cart
-                    </a>
+                    </button>
                     </div>
                   </div>
                 </div>
@@ -88,11 +86,13 @@ const IndexPage = data => {
             </div>
           </div>
         </div>
-        {/* 
-        Commenting out for now until I get more articles
-        <div className="Blog-section">
-          <LatestBlogs data={data.data.allContentfulBlogs} />
-        </div> */}
+        
+        <div className="Blog-section mt-5">
+          <div className="container">
+            <h3>Swag Shop</h3>
+            <IndexPost data={data} />
+          </div>
+        </div>
         <div className="Contact-us mt-5">
             <div className="container mt-3">
               <h3 className="mt-5" id="contact">Contact Me</h3>

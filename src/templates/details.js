@@ -1,6 +1,6 @@
 import React from "react"
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import StarRatingComponent from 'react-star-rating-component';
+// import StarRatingComponent from 'react-star-rating-component';
 import { graphql } from "gatsby";
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -30,11 +30,11 @@ const ProductDetails = data => (
         <div>
           <h2>{data.data.contentfulProduct.name}</h2>
         </div>
-        <StarRatingComponent
+        {/* <StarRatingComponent
           name="rate1"
           starCount={5}
           value={data.data.contentfulProduct.rating}
-        />
+        /> */}
         <div className="row buynowinner">
           <div className="col-sm-2">
             <span className="price">Price: ${data.data.contentfulProduct.price}</span>

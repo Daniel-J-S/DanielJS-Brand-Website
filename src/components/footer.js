@@ -4,7 +4,7 @@ import SocialIcons from "./social-icons";
 class Footer extends Component {
     render() {
         return (
-            <footer className="site-footer">
+            <footer className="site-footer mt-5">
                 <div className="footer_inner">
                     <div className="container">
                         <div className="footer-widget footer-content">
