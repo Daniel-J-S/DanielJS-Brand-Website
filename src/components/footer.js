@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "gatsby"
 import SocialIcons from "./social-icons";
 
 class Footer extends Component {

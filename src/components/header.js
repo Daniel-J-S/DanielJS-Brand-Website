@@ -37,10 +37,10 @@ const Header = ({ siteTitle, location}) => {
                   <span className="nav-link" onClick={() => handleNav('articles')}>Articles</span>
                 </li> */}
                 <li className="nav-item">
-                  <span className="nav-link" onClick={() => handleNav('videos')}>Videos</span>
+                  <span onKeyDown={() => handleNav('videos')} tabIndex="0" role="link" className="nav-link" onClick={() => handleNav('videos')}>Videos</span>
                 </li>
                 <li className="nav-item">
-                  <span className="nav-link" onClick={() => handleNav('contact')}>Contact Me</span>
+                  <span onKeyDown={() => handleNav('contact')} tabIndex="0" role="link" className="nav-link" onClick={() => handleNav('contact')}>Contact Me</span>
                 </li>
                 <li className="nav-item">
                     <Link className="nav-link" to="/work-request">Web Development</Link>
