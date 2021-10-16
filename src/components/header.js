@@ -1,8 +1,8 @@
-import { Link, navigate } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
-import logo from "../images/logo.png"
-import scrollTo from 'gatsby-plugin-smoothscroll'
+import { Link, navigate } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
+import logo from '../images/logo.png';
+import scrollTo from 'gatsby-plugin-smoothscroll';
 
 
 
@@ -11,7 +11,7 @@ const Header = ({ siteTitle, location}) => {
     if(location && location.pathname !== '/') {
       navigate(`/#${id}`);
     } else {
-      scrollTo(`#${id}`)
+      scrollTo(`#${id}`);
     }
   }
 
@@ -31,14 +31,19 @@ const Header = ({ siteTitle, location}) => {
                     <Link className="nav-link" to="/">Home</Link>
                   </li>
                 }
+                {/* 
+                Removing for now until I get more articles
                 <li className="nav-item">
                   <span className="nav-link" onClick={() => handleNav('articles')}>Articles</span>
-                </li>
+                </li> */}
                 <li className="nav-item">
                   <span className="nav-link" onClick={() => handleNav('videos')}>Videos</span>
                 </li>
                 <li className="nav-item">
                   <span className="nav-link" onClick={() => handleNav('contact')}>Contact Me</span>
+                </li>
+                <li className="nav-item">
+                    <Link className="nav-link" to="/work-request">Web Development</Link>
                 </li>
               </ul>
               <div className="header-cart">
@@ -65,10 +70,10 @@ const Header = ({ siteTitle, location}) => {
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
+};
 
 Header.defaultProps = {
   siteTitle: ``,
-}
+};
 
-export default Header
+export default Header;

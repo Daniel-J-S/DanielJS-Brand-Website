@@ -173,7 +173,6 @@ pre tt:after{content:""}
 .product-main .details_List .details_inner h2{font-size:24px;color:#333;margin-bottom:10px;}
 .product-main .details_List .details_inner h2 a{color:#333;}
 .snipcart-add-item{border:1px solid #ef3d56;padding:10px 15px;display:inline-block;font-size:12px;color:#fff!important;border-radius:5px;font-weight:600;background:#ef3d56;text-decoration:none!important;text-transform:uppercase;}
-.product-details {}
 .product-details .gatsby-image-wrapper{height:500px;}
 
 /* header css */
@@ -242,7 +241,6 @@ span.price{font-weight:bold;font-size:30px;}
 .countdown-section .gatsby-image-wrapper{height:400px;}
 .countdown-section .countdown-inner{position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);-moz-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);width:1110px!important;max-width:90%;z-index:3;}
 .countdown-section .countdown-inner *{color:#fff;text-shadow:2px 2px 9px #000;}
-.countdown-section{}
 .countdown-section:before{content:"";background:#0000004f;position:absolute;top:0;left:0;bottom:0;right:0;width:100%;height:100%;z-index:1;}
 .countdown-section .countdown-inner h2{font-size:40px;}
 .countdown-section .countdown-inner a{background:#ef3d56;color:#fff;text-decoration:none;padding:12px 25px;border-radius:3px;display:inline-block;letter-spacing:1px;text-shadow:0 0 0 #000;}
@@ -275,8 +273,7 @@ ul.latest-blog li .inner:before{content:"";background:#0000004f;position:absolut
 ul.latest-blog li h2 a{color:#fff;}
 ul.latest-blog li .inner a{position:absolute;left:0;right:0;top:0;bottom:0;z-index:5;}
 .site-Banner .gatsby-image-wrapper{height:500px;}
-.Contact-us{margin:40px 0;}
-.Contact-us form{}
+.Contact-us{margin:40px auto; max-width: 40vw;}
 .Contact-us form input{width:100%;height:40px;}
 .Contact-us form textarea{width:100%;height:100px;}
 .Contact-us form label{width:100%;}
@@ -309,11 +306,13 @@ a.header-logo img{margin:0;width:220px;}
 .site-footer .menu-main-container ul li a{padding:0 15px}
 .site-footer .menu-main-container ul li .sub-menu{display:none}
 .site-footer  ul{margin-bottom:0;}
-.site-About{padding:40px 0;}
+.site-About{ padding:40px 0; }
 footer.site-footer ul{margin:0;}
 
 /* Media Css */
 @media (max-width:991px){
+  .section-title { text-align: center;}
+  .Contact-us{max-width: 45vw;}
   ul.latest-blog li:last-child{display:none;}
   ul.latest-blog li{width:50%;}
   ul.blog-list li .post-item .post-thumbnail{width:100%;}
@@ -324,6 +323,7 @@ footer.site-footer ul{margin:0;}
   div#disqus_thread{background:none;box-shadow:none;padding:0;}
 }
 @media (max-width:767px){
+  .Contact-us{max-width: 100%;}
   header.site-header .align-self-center{align-self:center!important;text-align:left;}
   a.header-logo img{width:160px;}
   header nav ul.navbar-nav{justify-content:left; margin: 0 !important;}

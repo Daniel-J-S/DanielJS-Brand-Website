@@ -5,8 +5,8 @@ const { spaceId, accessToken, snipcart, websiteId } = process.env;
 
 module.exports = {
   siteMetadata: {
-    title: `DanielJS Brand Website`,
-    description: `A Brand Website For the DanielJS Brand`,
+    title: `DanielJS`,
+    description: `A Brand Website For DanielJS`,
     author: `DanielJS`,
   },
   plugins: [

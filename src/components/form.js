@@ -35,29 +35,6 @@ function Form() {
             formSubmitted: false}), 3000)
     }
 
-    // const [y, setY] = useState(window.scrollY);
-
-    // const handleNavigation = useCallback(
-    // e => {
-    //     const window = e.currentTarget;
-    //     if (y > window.scrollY || y < window.scrollY) {
-    //         console.log('hello')
-    //         setState({...state, formSubmitted: false})
-    //     }
-    //         setY(window.scrollY);
-    //     }, [y]
-    // );
-
-    // useEffect(() => {
-    //     setY(window.scrollY);
-    //     window.addEventListener("scroll", handleNavigation);
-
-    //     return () => {
-    //         window.removeEventListener("scroll", handleNavigation);
-    //     };
-    // }, [handleNavigation]);
-
-
     return (
         <>
             {state.formSubmitted ? <p>Thank you for contacting me!</p> :
