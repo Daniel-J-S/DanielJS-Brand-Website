@@ -6,7 +6,6 @@ import SEO from '../components/seo';
 import Form from '../components/form';
 import Banner from '../components/banner';
 import SocialIcons from '../components/social-icons';
-// import StarRatingComponent from 'react-star-rating-component';
 import { graphql } from 'gatsby';
 import bio from '../data/bio.json';
 
@@ -18,28 +17,22 @@ class IndexPost extends React.Component {
       <React.Fragment>
         <div className="row product-main">
           {data.data.allContentfulProduct.edges.map(items => (
-            <div className="Catalogue__item col-sm-12 col-md-6 col-lg-4" key={items.node.id}>
+            <Link to={`/${items.node.slug}`} key={items.node.id} className="Catalogue__item col-sm-12 col-md-6 col-lg-4 text-dark">
+            <div>
               <div className="details_List">
                 {items.node.image === null ? <div className="no-image">No Image</div> : <Img sizes={items.node.image.fluid} />}
-
                 <div className="details_inner">
-
                   <h2>
-                    <Link to={`/${items.node.slug}`}>{items.node.name}</Link>
+                    {items.node.name}
                   </h2>
-                  {/* <StarRatingComponent
-                    name="rate1"
-                    starCount={5}
-                    value={items.node.rating}
-                  /> */}
                   <p>{items.node.details.childMarkdownRemark.excerpt}</p>
                   <div className="row">
-                    <div className="col-sm-4 align-self-center">
+                    <div className="col-sm-4 align-self-center mb-3">
                       <span className="price"><small>${items.node.price}</small></span>
                     </div>
-                    <div className="col-sm-8 text-right align-self-center">
+                    <div className="col-sm-8 text-right align-self-center mb-3">
                       <button
-                        className="Product snipcart-add-item"
+                        className="btn btn-sm Product snipcart-add-item"
                         data-item-id={items.node.slug}
                         data-item-price={items.node.price}
                         data-item-image={items.node.image === null ? "" : items.node.image.fluid.src}
@@ -53,6 +46,7 @@ class IndexPost extends React.Component {
                 </div>
               </div>
             </div>
+            </Link>
           ))}
         </div>
       </React.Fragment>
@@ -88,7 +82,7 @@ const IndexPage = data => {
         </div>
         
         <div className="Blog-section mt-5">
-          <div className="container">
+          <div className="container pt-5">
             <h3>Swag Shop</h3>
             <IndexPost data={data} />
           </div>

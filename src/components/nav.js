@@ -47,8 +47,8 @@ const ResponsiveNav = ({ location }) => {
 
   const links = (
       <>
-        <Link className="nav-link" to="/videos">My Videos</Link>
-        <Link className="nav-link" to="/work-request">Web Development</Link>
+        <Link activeStyle={{margin: 0}} activeClassName="with-underline" className="nav-link" to="/videos">My Videos</Link>
+        <Link activeStyle={{margin: 0}} activeClassName="with-underline" className="nav-link" to="/work-request">Web Development</Link>
         <span onKeyDown={() => handleNav('contact')} tabIndex="0" role="link" className="nav-link" onClick={() => handleNav('contact')}>Contact Me</span>
       </>
   );
@@ -74,7 +74,7 @@ const ResponsiveNav = ({ location }) => {
 
 
   return (
-    <div className="nav-wrapper">
+    <div className="nav-wrapper" style={{boxShadow: !isNavVisible ? '0 4px 8px 0 rgba(0, 0, 0, 0.2)': 'none !important'}}>
       <Link to="/" onClick={() => setNavVisibility(false)}>
         <img className="logo" src={logo} alt="logo" />
       </Link>
