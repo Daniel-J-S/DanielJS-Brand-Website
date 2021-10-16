@@ -4,11 +4,11 @@ import SEO from '../components/seo';
 import Posts from '../components/posts';
 import algorithmChallengeVideos from '../data/algorithm-challenge-videos.json';
 
-function Videos(props) {
+function Videos({ location }) {
     return(
-        <Layout>
+        <Layout location={location}>
         <SEO title="My Videos" description="Check out my latest videos where I demonstrate how to solve FreeCodeCamp's Algorithm Challenges"/>
-            <div className="Blog-section">
+            <div className="Blog-section Page">
                 <Posts data={algorithmChallengeVideos} title="My Videos" />
             </div>
         </Layout>
