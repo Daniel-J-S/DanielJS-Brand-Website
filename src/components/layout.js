@@ -8,28 +8,31 @@ import "../css/style.css"
 import Header from "./header"
 import Footer from "./footer"
 
-const Layout = ({ children, location }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
+const Layout = ({ children, location }) => { 
+
+  return (
+    <StaticQuery
+      query={graphql`
+        query SiteTitleQuery {
+          site {
+            siteMetadata {
+              title
+            }
           }
         }
-      }
-    `}
-    render={data => (
-      <>
-        <Header siteTitle={data.site.siteMetadata.title} location={location}/>
-        <div>
-          <main>{children}</main>
-        </div>
-        <Footer />
-      </>
-    )}
-  />
-)
+      `}
+      render={data => (
+        <>
+          <Header siteTitle={data.site.siteMetadata.title} location={location}/>
+          <div>
+            <main>{children}</main>
+          </div>
+          <Footer />
+        </>
+      )}
+    />
+  )
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

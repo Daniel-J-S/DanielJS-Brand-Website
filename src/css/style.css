@@ -354,7 +354,7 @@ footer.site-footer ul{margin:0;}
 .nav {
   display: grid;
   grid-area: nav;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(5, auto);
   align-items: center;
   justify-items: start;
 }
