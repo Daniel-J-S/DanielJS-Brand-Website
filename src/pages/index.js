@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
-import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Form from '../components/form';
 import Banner from '../components/banner';
@@ -61,7 +60,7 @@ class IndexPost extends React.Component {
 const IndexPage = data => {
     const [bioLength, setBioLength] = useState(3);
     return (
-    <Layout location={data.location}>
+    <>
       <SEO title="Home" keywords={[`gatsby`, `coding`, `react`, `learn to code`]} />
       <Banner BannerData={data.data.allContentfulHeaderBanner.edges} />
       <div className="container">
@@ -98,7 +97,7 @@ const IndexPage = data => {
             </div>
         </div>
   
-    </Layout>
+    </>
   )
 }
 

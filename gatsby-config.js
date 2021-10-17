@@ -13,6 +13,12 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-smoothscroll`,
     {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/layout.js`),
+      },
+    },
+    {
       resolve: 'gatsby-plugin-crisp-chat',
       options: {
         websiteId: websiteId,
@@ -38,7 +44,7 @@ module.exports = {
         short_name: `starter`,
         start_url: `/`,
         background_color: `#fff`,
-        theme_color: `#FBE693`,
+        theme_color: `#fff`,
         display: `minimal-ui`,
         icon: `src/images/logo.png`,
       },

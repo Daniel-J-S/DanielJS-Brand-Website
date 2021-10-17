@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { graphql } from 'gatsby';
 import SEO from '../components/seo';
-import Layout from '../components/layout';
 
 const ProductDetails = data => {
   const [selectState, setSelectState] = useState({
@@ -19,7 +18,7 @@ const ProductDetails = data => {
   const showSizeSelection = data.data.contentfulProduct.name !== "DanielJS Laptop Sticker";
 
   return (
-    <Layout>
+    <>
       <SEO title={data.data.contentfulProduct.name} keywords={[`gatsby`, `application`, `react`]} />
       <div className="container details-page Page">
         <div className="product-details">
@@ -84,7 +83,7 @@ const ProductDetails = data => {
           />
         </div>
       </div>
-    </Layout>
+    </>
   );
 }
 
