@@ -314,7 +314,11 @@ footer.site-footer ul{margin:0;}
 }
 
 .Page table {
-  max-width: 300px !important;
+  max-width: 350px !important;
+}
+
+.Page table th, td {
+  text-align: center !important;
 }
 
 .Page h3 {
