@@ -16,7 +16,9 @@ class IndexPost extends React.Component {
     return (
       <React.Fragment>
         <div className="row product-main">
-          {data.data.allContentfulProduct.edges.map(items => (
+          {data.data.allContentfulProduct.edges.map(items => { 
+            const sizes = items.node.sizes.map((s, i) => s.size).join('|');
+            return (
             <Link to={`/${items.node.slug}`} key={items.node.id} className="Catalogue__item col-sm-12 col-md-6 col-lg-4 text-dark">
             <div>
               <div className="details_List">
@@ -38,6 +40,8 @@ class IndexPost extends React.Component {
                         data-item-image={items.node.image === null ? "" : items.node.image.fluid.src}
                         data-item-name={items.node.name}
                         data-item-url={`/`}
+                        data-item-custom1-name="Size"
+                        data-item-custom1-options={sizes}
                       >
                         <i className="fas fa-shopping-bag" />Add to Cart
                     </button>
@@ -47,7 +51,7 @@ class IndexPost extends React.Component {
               </div>
             </div>
             </Link>
-          ))}
+          )})}
         </div>
       </React.Fragment>
     );
@@ -109,6 +113,9 @@ export const query = graphql`
           name
           slug
           rating
+          sizes {
+            size
+          }
           image {
             fluid(maxWidth: 1000) {
               base64

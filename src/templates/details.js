@@ -15,7 +15,7 @@ const ProductDetails = data => {
   }
 
 
-  const sizes = data.data.contentfulProduct.sizes.reverse().map((s, i) => s.size).join('|');
+  const sizes = data.data.contentfulProduct.sizes.map((s, i) => s.size).join('|');
   const showSizeSelection = data.data.contentfulProduct.name !== "DanielJS Laptop Sticker";
 
   return (
