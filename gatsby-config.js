@@ -37,7 +37,7 @@ module.exports = {
         name: `DanielJS`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#FBE693`,
+        background_color: `#fff`,
         theme_color: `#FBE693`,
         display: `minimal-ui`,
         icon: `src/images/logo.png`,
