@@ -1,5 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;800&display=swap');
-
+@font-face {
+  font-family: 'Maven Pro';
+  src: url('./webfonts/MavenPro-Medium.ttf') format('ttf'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+   url('./webfonts/MavenPro-Medium.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+} 
 html{font-family:'Maven Pro', sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
 body{margin:0;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 article,
@@ -274,8 +277,8 @@ ul.latest-blog li h2 a{color:#fff;}
 ul.latest-blog li .inner a{position:absolute;left:0;right:0;top:0;bottom:0;z-index:5;}
 .site-Banner .gatsby-image-wrapper{height:500px;}
 .Contact-us{margin:40px auto;}
-.Contact-us form input {width:100%;height:40px; border-radius: 5px; padding: 1rem; margin-top: .5rem;}
-.Contact-us form textarea{width:100%;height:100px; border-radius: 5px; padding: .5rem; margin-top: .5rem;}
+.Contact-us form input {width:100%;height:40px; border-radius: 5px; padding: 1rem; margin-top: .5rem; border: .01rem solid #808080}
+.Contact-us form textarea{width:100%;height:100px; border-radius: 5px; padding: .5rem; margin-top: .5rem; border: .01rem solid #808080}
 .Contact-us form label{width:100%; font-weight: 600;}
 .Contact-us form>div{margin-bottom:30px;}
 .Contact-us form>div button{width:120px;height:50px;background:#333;color:#fff;border:1px solid #333;}
