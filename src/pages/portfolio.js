@@ -26,6 +26,7 @@ export default Portfolio;
 export const query = graphql`
 query Portfolio {
     contentfulPortfolio(title: {eq: "Daniel Scott's Portfolio"}) {
+      title
       author {
         name
         photo {
