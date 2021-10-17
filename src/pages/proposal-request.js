@@ -46,7 +46,7 @@ function WorkRequest({ location }) {
             <SEO title="Request for Web Development" description="Need a new website or updates to an existing site? I would love to dicuss how we can optimize your web presence" />
             <div className="Contact-us mt-5 Page">
                 <div className="container">
-                    <h1>Work Request</h1>
+                    <h1>Proposal Request</h1>
                     <p>Need a new website or updates to an existing site? I would love to dicuss how we can optimize your web presence.</p>
                     {state.formSubmitted ? <p>Thank you for contacting me!</p> :
                         <form className="mt-5" name="Work Request" data-netlify="true" onSubmit={handleSubmit}>

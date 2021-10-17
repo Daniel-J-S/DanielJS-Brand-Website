@@ -47,10 +47,10 @@ const ResponsiveNav = ({ location }) => {
 
   const links = (
       <>
-        <Link onClick={toggleNav} activeStyle={{margin: 0}} activeClassName="with-underline" className="nav-link" to="/videos">My Videos</Link>
-        <Link onClick={toggleNav} activeStyle={{margin: 0}} activeClassName="with-underline" className="nav-link" to="/work-request">Proposal Request</Link>
+        <Link onClick={toggleNav} activeStyle={{margin: 0}} activeClassName={!isSmallScreen ? 'with-underline' : ''} className="nav-link" to="/videos">My Videos</Link>
+        <Link onClick={toggleNav} activeStyle={{margin: 0}} activeClassName={!isSmallScreen ? 'with-underline' : ''} className="nav-link" to="/proposal-request">Proposal Request</Link>
         <span onKeyDown={() => handleNav('contact')} tabIndex="0" role="link" className="nav-link" onClick={() => handleNav('contact')}>Contact Me</span>
-        <span tabIndex="0" role="link" onKeyDown={toggleNav} onClick={toggleNav} className="nav-link snipcart-customer-signin">My account</span>
+        <Link onClick={toggleNav} activeStyle={{margin: 0}} activeClassName={!isSmallScreen ? 'with-underline' : ''} className="nav-link" to="/resume">Resume</Link>
       </>
   );
 

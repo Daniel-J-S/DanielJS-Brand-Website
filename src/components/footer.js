@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import SocialIcons from "./social-icons";
+import React, { Component } from 'react';
+import SocialIcons from './social-icons';
+import { Link } from 'gatsby';
 
 class Footer extends Component {
     render() {
@@ -11,16 +12,24 @@ class Footer extends Component {
                             <section id="nav_menu-8" className="widget widget_nav_menu">
                                 <div className="menu-main-container">
                                     <ul id="menu-main" className="menu">
-                                        {/* <li><Link to="/about">About</Link></li> */}
-                                        {/* <li><Link to="/blogs">Articles</Link></li> */}
-                                        {/* <li><Link to="/store">Store</Link></li> */}
-                                        {/* <li><Link to="/contact-us">Contact</Link></li> */}
-                                        {/* <li><Link to="/copyright">Copyright</Link></li> */}
+                                        <li>
+                                            <span tabIndex="0" role="link" className="snipcart-customer-signin">My Account</span>
+                                        </li>
+                                        <li>
+                                            <Link to="/videos">My Videos</Link>
+
+                                        </li>
+                                        <li>
+                                            <Link to="/proposal-request">Proposal Request</Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/resume">Resume</Link>
+                                        </li>
                                     </ul>
                                 </div>
                             </section>
                         </div>
-                        <div className="footer-bottom social-right-menu ">
+                        <div className="footer-bottom social-right-menu mt-3">
                         <SocialIcons />
                             <div className="site-info">
                                 © {new Date().getFullYear()} DanielJS. All rights reserved.
