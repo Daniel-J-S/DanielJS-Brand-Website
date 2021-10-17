@@ -313,9 +313,13 @@ footer.site-footer ul{margin:0;}
   margin-top: 10rem !important;
 }
 
-/* .Page th, td {
-  text-align: center !important;
-} */
+.Page table {
+  max-width: 300px !important;
+}
+
+.Page h3 {
+  margin-top: 5rem;
+}
 
 .snipcart-modal__container {
   margin-top: 5rem !important;
@@ -544,6 +548,13 @@ footer.site-footer ul{margin:0;}
 
 /* Media Css */
 @media (max-width:991px){
+  .Page table {
+    margin: auto;
+  }
+
+  .Page h3 {
+    text-align: center;
+  }
   .nav-wrapper {
     grid-template-columns: 75% 15% 10%;
   }
