@@ -13,6 +13,8 @@ const ResponsiveNav = ({ location }) => {
 
   const itemsCount = useRef();
 
+  console.log('location', location)
+
   useEffect(() => {
     const mediaQuery = window.matchMedia('(max-width: 1065px)');
     mediaQuery.addEventListener('change', handleMediaQueryChange);
@@ -33,7 +35,6 @@ const ResponsiveNav = ({ location }) => {
   };
 
   const toggleNav = () => {
-    // Snipcart.api.theme.cart.close()
     setNavVisibility(!isNavVisible);
   };
 
