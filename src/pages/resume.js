@@ -28,7 +28,7 @@ export default Resume;
 
 export const query = graphql`
     query Resume {
-        contentfulResume(title: {eq: "Daniel's Resume"}) {
+        contentfulResume(title: {eq: "Daniel Scott's Resume"}) {
         body {
             childMarkdownRemark {
                 html
