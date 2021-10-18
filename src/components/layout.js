@@ -24,15 +24,23 @@ const Layout = ({ children, location }) => {
       render={data => (
         <>
           <Header darkenBackground={darkenBackground} setDarkenBackground={setDarkenBackground} siteTitle={data.site.siteMetadata.title} location={location}/>
-          <div style={{ opacity: darkenBackground ? '.2': '1', animation: darkenBackground ? 'fadeOut 700ms ease-out backwards' : 'fadeIn 500ms ease-in forwards' }}>
-            <main>{children}</main>
-          </div>
+            <div style={{
+              opacity: darkenBackground ? '.2' : '1',
+              minHeight: '100vh',
+              backgroundColor: 'white',
+              zIndex: 9999,
+              width: '100vw',
+              animation: darkenBackground ? 'fadeOut 500ms ease-out backwards':'fadeIn 550ms ease-in forwards'
+            }}>
+              <main>{children}</main>
+            </div>
           <Footer darkenBackground={darkenBackground} />
         </>
       )}
     />
   )
 }
+
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
