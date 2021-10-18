@@ -9,6 +9,9 @@ function Portfolio({ data }) {
             <SEO title="Daniel Scott's Portfolio" description="I am a self-motivated, hard-working, full-stack developer and educator with a strong passion for innovation and technology." />
             <div style={{maxWidth: '850px'}} className="Page container">
                 <h2 style={{display: 'flex', alignItems: 'center'}}>{data.contentfulPortfolio.title} <Img style={{ height: '4rem', width: '4rem', marginLeft: '1rem' }} className="rounded-circle img-fluid" sizes={data.contentfulPortfolio.author.photo.sizes} /></h2>
+                <div dangerouslySetInnerHTML={{
+                    __html: data.contentfulPortfolio.description.childMarkdownRemark.html
+                  }} />
                 <p>
                     <small><strong>Last Updated: {data.contentfulPortfolio.updatedAt}</strong></small>
                 </p>
@@ -40,6 +43,11 @@ query Portfolio {
             srcWebp
             tracedSVG
           }
+        }
+      }
+      description {
+        childMarkdownRemark {
+          html
         }
       }
       body {
