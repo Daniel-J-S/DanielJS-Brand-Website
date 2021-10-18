@@ -33,7 +33,9 @@ const ResponsiveNav = ({ location, darkenBackground, setDarkenBackground }) => {
   };
 
   const toggleNav = () => {
-    setDarkenBackground(!darkenBackground);
+    if(isSmallScreen) {
+      setDarkenBackground(!darkenBackground);
+    }
     setNavVisibility(!isNavVisible);
   };
 
@@ -78,7 +80,7 @@ const ResponsiveNav = ({ location, darkenBackground, setDarkenBackground }) => {
 
   return (
     <div className="nav-wrapper" style={{boxShadow: !isNavVisible ? '0 4px 8px 0 rgba(0, 0, 0, 0.2)': 'none !important'}}>
-      <Link to="/" onClick={() => setNavVisibility(false)}>
+      <Link to="/" onClick={() => {setNavVisibility(false); setDarkenBackground(false)}}>
         <img className="logo" src={logo} alt="logo" />
       </Link>
       <CSSTransition

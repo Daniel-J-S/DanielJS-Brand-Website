@@ -312,10 +312,10 @@ footer.site-footer ul{margin:0;}
 
 .Page {
   margin-top: 10rem !important;
-  animation: fadeIn 1200ms ease-in-out both;
+  /* animation: fadeIn 250ms ease-in forwards; */
 }
 .HomePage {
-  animation: fadeIn 1200ms ease-in-out both;
+  /* animation: fadeIn 250ms ease-in forwards; */
 }
 
 .Page table {
@@ -336,13 +336,13 @@ footer.site-footer ul{margin:0;}
 }
 
 @keyframes fadeIn {
-  0% { opacity: 0; }
+  0% { opacity: .2; }
   100% { opacity: 1; }
 }
 
 @keyframes fadeOut {
   0% { opacity: 1; }
-  100% { opacity: 0; }
+  100% { opacity: .2; }
 }
 
 .snipcart-modal__container {

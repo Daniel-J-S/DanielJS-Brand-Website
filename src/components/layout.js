@@ -24,10 +24,10 @@ const Layout = ({ children, location }) => {
       render={data => (
         <>
           <Header darkenBackground={darkenBackground} setDarkenBackground={setDarkenBackground} siteTitle={data.site.siteMetadata.title} location={location}/>
-          <div style={{ opacity: darkenBackground ? '.5': '1', animation: darkenBackground ? 'fadeOut 1200ms ease-out both' : 'fadeIn 900ms ease-in both' }}>
+          <div style={{ opacity: darkenBackground ? '.2': '1', animation: darkenBackground ? 'fadeOut 700ms ease-out backwards' : 'fadeIn 500ms ease-in forwards' }}>
             <main>{children}</main>
           </div>
-          <Footer />
+          <Footer darkenBackground={darkenBackground} />
         </>
       )}
     />

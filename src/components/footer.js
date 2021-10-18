@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 class Footer extends Component {
     render() {
         return (
-            <footer className="site-footer mt-5">
+            <footer className="site-footer mt-5" style={{ opacity: this.props.darkenBackground ? '.5': '1', animation: this.props.darkenBackground ? 'fadeOut 500ms ease-out both' : 'fadeIn 250ms ease-in both' }}>
                 <div className="footer_inner">
                     <div className="container">
                         <div className="footer-widget footer-content">
@@ -13,7 +13,7 @@ class Footer extends Component {
                                 <div className="menu-main-container">
                                     <ul id="menu-main" className="menu">
                                         <li>
-                                            <span tabIndex="0" role="link" className="snipcart-customer-signin">Manage Account</span>
+                                            <span className="snipcart-customer-signin">Manage Account</span>
                                         </li>
                                         <li>
                                             <Link to="/videos">Videos</Link>

@@ -90,9 +90,9 @@ const IndexPage = data => {
             <IndexPost data={data} />
           </div>
         </div>
-        <div className="Contact-us mt-5">
+        <div className="Contact-us mt-5" id="contact">
             <div className="container mt-3">
-              <h3 className="mt-5" id="contact">Contact Me</h3>
+              <h3 className="mt-5 pt-5">Contact Me</h3>
                 <Form />
             </div>
         </div>
