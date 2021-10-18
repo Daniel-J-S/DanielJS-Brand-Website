@@ -4,8 +4,12 @@ import ResponsiveNav from './nav';
 
 
 
-const Header = ({ location }) => (
-    <ResponsiveNav location={location} />
+const Header = ({ location, darkenBackground, setDarkenBackground }) => (
+    <ResponsiveNav 
+      darkenBackground={darkenBackground} 
+      setDarkenBackground={setDarkenBackground} 
+      location={location} 
+    />
 )
 
 Header.propTypes = {

@@ -6,10 +6,10 @@ import logo from '../images/logo.png';
 
 
 
-const ResponsiveNav = ({ location }) => {
+const ResponsiveNav = ({ location, darkenBackground, setDarkenBackground }) => {
   const [isNavVisible, setNavVisibility] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(true);
-  const [showItemsCount, setShowItemsCount] = useState(false)
+  const [showItemsCount, setShowItemsCount] = useState(false);
 
   const itemsCount = useRef();
 
@@ -33,6 +33,7 @@ const ResponsiveNav = ({ location }) => {
   };
 
   const toggleNav = () => {
+    setDarkenBackground(!darkenBackground);
     setNavVisibility(!isNavVisible);
   };
 
@@ -47,7 +48,7 @@ const ResponsiveNav = ({ location }) => {
 
   const links = (
       <>
-        <Link onClick={toggleNav} activeStyle={{margin: 0}} activeClassName={!isSmallScreen ? 'with-underline' : ''} className="nav-link" to="/videos">My Videos</Link>
+        <Link onClick={toggleNav} activeStyle={{margin: 0}} activeClassName={!isSmallScreen ? 'with-underline' : ''} className="nav-link" to="/videos">Tutorials</Link>
         <Link onClick={toggleNav} activeStyle={{margin: 0}} activeClassName={!isSmallScreen ? 'with-underline' : ''} className="nav-link" to="/proposal-request">Proposal Request</Link>
         <span onKeyDown={() => handleNav('contact')} tabIndex="0" role="link" className="nav-link" onClick={() => handleNav('contact')}>Contact Me</span>
         <Link onClick={toggleNav} activeStyle={{margin: 0}} activeClassName={!isSmallScreen ? 'with-underline' : ''} className="nav-link" to="/resume">Resume</Link>

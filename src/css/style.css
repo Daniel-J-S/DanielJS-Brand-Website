@@ -191,9 +191,7 @@ header nav{display:flex;}
 header nav ul.navbar-nav{flex-direction:row;margin:0;width:90%;justify-content:flex-end;}
 header nav ul.navbar-nav li{margin:0 10px;}
 header nav ul.navbar-nav li a{color: #000000;}
-.navbar-nav .nav-link{cursor: pointer;}
-
-/* header css */
+.navbar-nav .nav-link{cursor: pointer; font-size: 10px;}
 footer.site-footer{background:#fff;padding:0;text-align:center;}
 footer.site-footer *{color:#000;}
 .no-image{height:200px;background:#00000075;display:flex;justify-content:center;flex-direction:column;text-align:center;color:#fff;text-shadow:1px 1px 5px #000;}
@@ -340,6 +338,11 @@ footer.site-footer ul{margin:0;}
 @keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 .snipcart-modal__container {
