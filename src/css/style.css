@@ -316,6 +316,9 @@ footer.site-footer ul{margin:0;}
   margin-top: 10rem !important;
   animation: fadeIn 1200ms ease-in-out both;
 }
+.HomePage {
+  animation: fadeIn 1200ms ease-in-out both;
+}
 
 .Page table {
   max-width: 350px !important;

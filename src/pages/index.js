@@ -63,7 +63,7 @@ const IndexPage = data => {
     <>
       <SEO title="Home" keywords={[`gatsby`, `coding`, `react`, `learn to code`]} />
       <Banner BannerData={data.data.allContentfulHeaderBanner.edges} />
-      <div className="container Page">
+      <div className="container HomePage">
         <div className="text-center">
           <div className="with-underline p-3 mb-5 text-center">
             <small>Set Bio Length</small>
