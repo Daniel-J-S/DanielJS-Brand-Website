@@ -314,6 +314,7 @@ footer.site-footer ul{margin:0;}
 
 .Page {
   margin-top: 10rem !important;
+  animation: fadeIn 1200ms ease-in-out both;
 }
 
 .Page table {
@@ -331,6 +332,11 @@ footer.site-footer ul{margin:0;}
 
 .Page .gatsby-resp-iframe-wrapper {
   margin-bottom: 5rem;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 .snipcart-modal__container {

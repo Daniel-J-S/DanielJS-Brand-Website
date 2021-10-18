@@ -10,7 +10,7 @@ const disqusShortname = "danieljs";
 const BlogDetails = data => (
     <>
         <SEO title={data.data.contentfulBlogs.title} keywords={[`gatsby`, `ecommerce`, `react`, `contentFul`, `Snipcart`]} />
-        <div className="blogs-page">
+        <div className="blogs-page Page">
             <div className="post-thumbnail">
                 <Img sizes={data.data.contentfulBlogs.featureImage.fluid} />
             </div>
