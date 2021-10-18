@@ -30,7 +30,7 @@ const Layout = ({ children, location }) => {
               backgroundColor: 'white',
               zIndex: 9999,
               width: '100vw',
-              animation: darkenBackground ? 'fadeOut 500ms ease-out backwards':'fadeIn 550ms ease-in forwards'
+              animation: darkenBackground ? 'fadeOut 500ms ease-out backwards':'none'
             }}>
               <main>{children}</main>
             </div>
