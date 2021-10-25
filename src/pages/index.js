@@ -59,6 +59,18 @@ class IndexPost extends React.Component {
 
 const IndexPage = data => {
     const [bioLength, setBioLength] = useState(3);
+
+    const [show, setShow] = useState(true)
+    
+    function handleClick(value) {
+      setBioLength(value);
+    }
+
+    function toggle() {
+      console.log('click')
+      setShow(!show);
+    }
+
     return (
     <>
       <SEO title="Home" keywords={[`gatsby`, `coding`, `react`, `learn to code`]} />
@@ -68,14 +80,19 @@ const IndexPage = data => {
           <div className="with-underline p-3 mb-5 text-center">
             <small>Set Bio Length</small>
             <div className="mt-3">
-              <button className={`btn btn-sm btn-${bioLength === 1 ? 'dark' : 'outline-dark'} ml-4`} onClick={() => setBioLength(1)}>Short</button>
-              <button className={`btn btn-sm btn-${bioLength === 2 ? 'dark' : 'outline-dark'} ml-4`} onClick={() => setBioLength(2)}>Medium</button>
-              <button className={`btn btn-sm btn-${bioLength === 3 ? 'dark' : 'outline-dark'} ml-4`} onClick={() => setBioLength(3)}>Long</button>
+              <button onMouseDown={toggle} onMouseUp={toggle} className={`btn btn-sm btn-${bioLength === 1 ? 'dark' : 'outline-dark'} ml-4`} onClick={() => handleClick(1)}>Short</button>
+              <button onMouseDown={toggle} onMouseUp={toggle} className={`btn btn-sm btn-${bioLength === 2 ? 'dark' : 'outline-dark'} ml-4`} onClick={() => handleClick(2)}>Medium</button>
+              <button onMouseDown={toggle} onMouseUp={toggle} className={`btn btn-sm btn-${bioLength === 3 ? 'dark' : 'outline-dark'} ml-4`} onClick={() => handleClick(3)}>Long</button>
             </div>
           </div>
-          <p className="p-3 mb-3">
-            {bio[bioLength]}
-          </p>
+            <div className="bio">
+              {
+                show &&
+                <p className="p-3 mb-3" style={{animation: 'fadeIn 1000ms ease-in forwards'}}>
+                  {bio[bioLength]}
+                </p>
+              }
+            </div>
             <h3 className="mt-5">Connect With Daniel</h3>
             <SocialIcons />
             <div className="video-wrapper mt-5">
