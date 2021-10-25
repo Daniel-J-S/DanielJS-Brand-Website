@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 class Footer extends Component {
     render() {
         return (
-            <footer className="site-footer mt-5" style={{ opacity: this.props.darkenBackground ? '.5': '1', animation: this.props.darkenBackground ? 'fadeOut 500ms ease-out both' : 'fadeIn 250ms ease-in both' }}>
+            <footer className="site-footer mt-5" style={{ opacity: this.props.darkenBackground ? '.2': '1', animation: this.props.darkenBackground ? 'fadeOut 500ms ease-out backwards':''}}>
                 <div className="footer_inner">
                     <div className="container">
                         <div className="footer-widget footer-content">
