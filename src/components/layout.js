@@ -12,8 +12,9 @@ import { consoleimg } from '../utils/console-img';
 const Layout = ({ children, location }) => { 
   const [darkenBackground, setDarkenBackground] = useState(false);
   
-  
-  consoleimg.load('https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif');
+  if(typeof window !== "undefined") {
+    consoleimg.load('https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif');
+  }
   
   return (
     <StaticQuery
