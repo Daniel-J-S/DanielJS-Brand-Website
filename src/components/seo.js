@@ -36,7 +36,7 @@ function SEO({ description, lang, meta, keywords, title, location }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: location && location.pathname === '/' ? 'Welcome to the Website of DanielJS' : `${title} | DanielJS`,
         },
         {
           property: `og:description`,
@@ -48,7 +48,7 @@ function SEO({ description, lang, meta, keywords, title, location }) {
         },
         {
           property: `og:image`,
-          content: `${location ? `${location.href}${ogImage}` : 'https://danieljs.io/'}${ogImage}`,
+          content: `https://danieljs.io/${ogImage}`,
         },
         {
           name: `twitter:card`,
