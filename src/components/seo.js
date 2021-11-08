@@ -19,9 +19,9 @@ function SEO({ description, lang, meta, keywords, title, location }) {
       }
     `
   );
-
+  const ogDescription = 'My main area of expertise is Full-Stack Software Engineering with the JavaScript programming language. I also teach others how to become software engineers. I also have extensive knowledge and experience building courseware used to teach software development to beginners.'
   const metaDescription = description || site.siteMetadata.description;
-
+  const isHomePage = location && location.pathname === '/'
   return (
     <Helmet
       htmlAttributes={{
@@ -36,11 +36,11 @@ function SEO({ description, lang, meta, keywords, title, location }) {
         },
         {
           property: `og:title`,
-          content: location && location.pathname === '/' ? 'Welcome to the Website of DanielJS' : `${title} | DanielJS`,
+          content: isHomePage ? 'Welcome to the Website of DanielJS' : `${title} | DanielJS`,
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: isHomePage ? ogDescription : description,
         },
         {
           property: `og:type`,

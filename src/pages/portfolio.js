@@ -41,7 +41,6 @@ query Portfolio {
             srcSet
             srcSetWebp
             srcWebp
-            tracedSVG
           }
         }
       }
