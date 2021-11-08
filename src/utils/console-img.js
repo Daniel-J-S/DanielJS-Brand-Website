@@ -2,7 +2,7 @@
    
 /* consoleimg v1.0 - chris johnson / @defaced */
 export const consoleimg = (function () {
-    
+    if(typeof window !== "undefined") {
     return {
       load: function (i, { size: s = 320, color: c = 'transparent' } = {}) {
         const r = new FileReader()
@@ -40,5 +40,7 @@ export const consoleimg = (function () {
           .then(i => r.readAsDataURL(i))
           .catch(e => console.warn(e.message))
       }
+    }} else {
+      return null;
     }
   })()
