@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '../css/style.css';
 import Header from './header';
 import Footer from './footer';
-import ogImage from '../images/og-image.png';
 import { consoleimg } from '../utils/console-img';
 
 const Layout = ({ children, location }) => { 
