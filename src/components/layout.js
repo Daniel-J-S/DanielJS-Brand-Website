@@ -6,17 +6,15 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '../css/style.css';
 import Header from './header';
 import Footer from './footer';
+import ogImage from '../images/og-image.png';
+import { consoleimg } from '../utils/console-img';
 
 const Layout = ({ children, location }) => { 
   const [darkenBackground, setDarkenBackground] = useState(false);
   
-  console.log(`%c
-  Hey there, you opened the console 🥰
   
-  "Talent is a pursued interest.
-  Anything that you're willing to practice, 
-  you can do."  -Bob Ross
-  `, 'color: #663399; font-size: 1.5rem; font-weight: bold; font-family: Helvetica;');
+  consoleimg.load('https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif');
+  
   return (
     <StaticQuery
       query={graphql`
@@ -54,3 +52,8 @@ Layout.propTypes = {
 }
 
 export default Layout
+
+
+
+
+
