@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
-import ogImage from '../images/og-image.png'
+import ogImage from '../images/og-image.png';
 
 function SEO({ description, lang, meta, keywords, title, location }) {
 
@@ -48,7 +48,7 @@ function SEO({ description, lang, meta, keywords, title, location }) {
         },
         {
           property: `og:image`,
-          content: `${location ? location.href : 'https://danieljs.io/'}${ogImage}`,
+          content: `${location ? `${location.href}${ogImage}` : 'https://danieljs.io/'}${ogImage}`,
         },
         {
           name: `twitter:card`,
