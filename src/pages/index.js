@@ -67,13 +67,17 @@ const IndexPage = data => {
     }
 
     function toggle() {
-      console.log('click')
       setShow(!show);
     }
 
     return (
     <>
-      <SEO title="Home" keywords={[`gatsby`, `coding`, `react`, `learn to code`]} />
+      <SEO 
+        title="Home" 
+        keywords={[`gatsby`, `coding`, `react`, `learn to code`]} 
+        description={data.description}
+        location={data.location}
+      />
       <Banner BannerData={data.data.allContentfulHeaderBanner.edges} />
       <div className="container HomePage">
         <div className="text-center">
