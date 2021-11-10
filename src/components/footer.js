@@ -13,14 +13,14 @@ class Footer extends Component {
                                 <div className="menu-main-container">
                                     <ul id="menu-main" className="menu">
                                         <li>
-                                            <span className="snipcart-customer-signin">Manage Account</span>
-                                        </li>
-                                        <li>
-                                            <Link to="/videos">Videos</Link>
-                                        </li>
-                                        <li>
                                             <Link to="/proposal-request">Request Proposal</Link>
                                         </li>
+                                        <li>
+                                            <span className="snipcart-customer-signin">Manage Account</span>
+                                        </li>
+                                        {/* <li>
+                                            <Link to="/videos">Videos</Link>
+                                        </li> */}
                                         <li>
                                             <Link to="/resume">Resume</Link>
                                         </li>
