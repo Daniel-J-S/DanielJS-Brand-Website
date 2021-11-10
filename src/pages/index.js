@@ -38,7 +38,8 @@ class IndexPost extends React.Component {
                         data-item-price={items.node.price}
                         data-item-image={items.node.image === null ? "" : items.node.image.fluid.src}
                         data-item-name={items.node.name}
-                        data-item-url={`/`}
+                        data-item-url={`/${items.node.slug}`}
+                        data-item-weight={items.node.weightCode}
                         data-item-custom1-name="Size"
                         data-item-custom1-options={sizes}
                       >
@@ -133,6 +134,7 @@ export const query = graphql`
           name
           slug
           rating
+          weightCode
           sizes {
             size
           }
