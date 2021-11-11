@@ -22,6 +22,7 @@ function SEO({ description, lang, meta, keywords, title, location }) {
   const ogDescription = 'My main area of expertise is Full-Stack Software Engineering with the JavaScript programming language. I also teach others how to become software engineers. I also have extensive knowledge and experience building courseware used to teach software development to beginners.'
   const metaDescription = description || site.siteMetadata.description;
   const isHomePage = location && location.pathname === '/'
+  const origin = location && location.origin;
   return (
     <Helmet
       htmlAttributes={{
@@ -48,7 +49,7 @@ function SEO({ description, lang, meta, keywords, title, location }) {
         },
         {
           property: `og:image`,
-          content: `https://danieljs.io/${ogImage}`,
+          content: `${origin}${ogImage}`,
         },
         {
           name: `twitter:card`,
