@@ -66,6 +66,7 @@ module.exports = {
       options: {
         apiKey: snipcart,
         autopop: true,
+        language: null,
       },
     },
   ],
