@@ -38,16 +38,8 @@ const ReactWithDanCourseRegistration = ({ location, data: { course } }) => {
                 </button> 
             </div>
           </div>
-          <div className="row buynowinner">
-            <div className="col-sm-4 col-md-3">
-            </div>
-              <div className="col-sm-12 col-md-12">
-                <div className="row container mb-3">
-               
-                </div>
-            </div>
-          </div>
           <div
+          className="container"
             dangerouslySetInnerHTML={{
               __html: course.details.childMarkdownRemark.html
             }}
