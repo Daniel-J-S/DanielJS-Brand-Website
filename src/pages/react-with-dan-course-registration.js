@@ -24,7 +24,7 @@ const ReactWithDanCourseRegistration = ({ location, data: { course } }) => {
               <span className="price">${course.price}.00</span>
               <br />
               <button
-                  className="Product snipcart-add-item mt-2"
+                  className="Product snipcart-add-item mt-2 mb-5"
                   data-item-id={`/react-with-dan-course-registration`}
                   data-item-image={course.image.fixed.src}
                   data-item-price={course.price}
