@@ -19,7 +19,7 @@ const ReactWithDanCourseRegistration = ({ location, data: { course } }) => {
           <div className="col-md-6">
               <Img {...course.image} />
             </div>
-            <div className="col-md-6 pt-5">
+            <div className="col-md-6 heading-section">
               <h2>"{course.name}" Course</h2> 
               <span className="price">${course.price}.00</span>
               <br />
