@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
-import '../css/font-awesome.css';
-import 'bootstrap/dist/css/bootstrap.css';
-import '../css/style.css';
 import Header from './header';
 import Footer from './footer';
 import { consoleimg } from '../utils/console-img';
