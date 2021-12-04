@@ -240,7 +240,9 @@ span.price{font-weight:bold;font-size:30px;}
 .details-page .product-details{margin-top:30px;}
 .with-underline{position:relative;text-align:left;display:inline-block;margin-bottom:40px;padding-bottom:8px;}
 .with-underline:after{content:"";position:absolute;height:2px;width:100%;left:0;right:0;background:#000000;top:100%;}
-
+.sub-title {
+  animation: fadeIn 2s linear forwards;
+}
 /* slider css */
 .countdown-section{position:relative;margin-bottom:0;}
 .countdown-section .gatsby-image-wrapper{height:400px;}

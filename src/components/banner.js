@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import Slider from "react-slick";
-import Img from "gatsby-image";
+import React, { Component } from 'react';
+import Slider from 'react-slick';
+import Img from 'gatsby-image';
 
 var settings = {
   dots: true,
@@ -9,11 +9,36 @@ var settings = {
   autoplay: true,
   autoplaySpeed: 3000,
   slidesToShow: 1,
-  slidesToScroll: 1
+  slidesToScroll: 0
 };
 
+
+
 export default class Banner extends Component {
-  render() {
+
+    state = {
+      subHeadingSection: 0
+    }
+
+
+    subHeadings = {
+      0: 'I TEACH CAREER CHANGERS HOW TO CODE',
+      1: 'I BUILD HIGH QUALITY WEBSITES FOR BUSINESSES.',
+      2: 'I COACH AND MENTOR SOFTWARE DEVELOPERS.',
+    }
+
+    timerId = null
+
+  
+    componentDidMount() {
+      this.timerId = setInterval(() => {
+        this.setState(prevState => ({
+          subHeadingSection: ++prevState.subHeadingSection % 3
+        }));
+      }, 3500);
+    }
+
+    render() {
 
     const { BannerData } = this.props;
 
@@ -25,9 +50,9 @@ export default class Banner extends Component {
               <div className="site-Banner">
                 <Img sizes={items.node.image.fluid} />
                 <div className="Banner-details">
-                  <div>
                     <h1>{items.node.title}</h1>
-                    <span className="sub-title">{items.node.subHeading}</span>
+                  <div>
+                    <span key={this.state.subHeadingSection} className="sub-title">{this.subHeadings[this.state.subHeadingSection]}</span>
                   </div>
                 </div>
               </div>
@@ -37,4 +62,4 @@ export default class Banner extends Component {
       </div>
     );
   }
-}
+};
