@@ -37,7 +37,7 @@ function SEO({ description, lang, meta, keywords, title, location }) {
         },
         {
           property: `og:title`,
-          content: isHomePage ? 'Hi there, I\'m DanielJS' : `${title} | DanielJS`,
+          content: isHomePage ? 'Hi There, I\'m DanielJS' : `${title} | DanielJS`,
         },
         {
           property: `og:description`,
