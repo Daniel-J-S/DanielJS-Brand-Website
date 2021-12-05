@@ -32,6 +32,7 @@ const ReactWithDanCourseRegistration = ({ location, data: { course } }) => {
                   data-item-url={`/react-with-dan-course-registration`}
                   data-item-shippable={false}
                   data-item-taxable={false}
+                  data-item-weight={0}
                   >
                   <i className="fas fa-tags" />
                   Add to Cart
