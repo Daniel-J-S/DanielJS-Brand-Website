@@ -241,7 +241,7 @@ span.price{font-weight:bold;font-size:30px;}
 .with-underline{position:relative;text-align:left;display:inline-block;margin-bottom:40px;padding-bottom:8px;}
 .with-underline:after{content:"";position:absolute;height:2px;width:100%;left:0;right:0;background:#000000;top:100%;}
 .sub-title {
-  animation: fadeIn 2s linear forwards;
+  animation: fadeInAndScale 1s linear forwards;
 }
 /* slider css */
 .countdown-section{position:relative;margin-bottom:0;}
@@ -342,6 +342,29 @@ footer.site-footer ul{margin:0;}
 @keyframes fadeIn {
   0% { opacity: .2; }
   100% { opacity: 1; }
+}
+
+
+
+@keyframes fadeInAndScale {
+  0% { 
+      opacity: 0;
+      font-size: .5rem;  
+  }
+  100% { 
+      opacity: 1;
+      font-size: 1rem; 
+  }
+}
+@media (max-width: 764px) {
+  @keyframes fadeInAndScale {
+    0% { 
+        opacity: 0; 
+    }
+    100% { 
+        opacity: 1;
+    }
+  }
 }
 
 @keyframes fadeOut {

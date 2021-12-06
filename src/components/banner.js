@@ -38,6 +38,10 @@ export default class Banner extends Component {
       }, 3500);
     }
 
+    componentWillUnmount() {
+      clearInterval(this.timerId);
+    }
+
     render() {
 
     const { BannerData } = this.props;
