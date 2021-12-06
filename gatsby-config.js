@@ -69,5 +69,11 @@ module.exports = {
         language: null,
       },
     },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/`]
+      }
+    },
   ],
 }
