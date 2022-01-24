@@ -67,7 +67,6 @@ const ProductDetails = data => {
                   data-item-custom1-options={showSizeSelection || null || selectState.userSelection ? selectState.value + '|' + sizes.split('|').filter(s => s !== selectState.value).join('|') : sizes}
                   data-item-name={data.data.contentfulProduct.name}
                   data-item-url={data.data.contentfulProduct.slug}
-                  data-item-weight={data.data.contentfulProduct.weightCode}
                   disabled={showSizeSelection ? !selectState.userSelection : false}
                   >
                   <i className="fas fa-shopping-bag" />
@@ -96,7 +95,6 @@ export const query = graphql`
       id
       name
       slug
-      weightCode
       sizes {
         size
       }

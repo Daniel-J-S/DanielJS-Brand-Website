@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
-import SEO from '../components/seo';
+import SEO from '../src/components/seo';
 import { graphql } from 'gatsby';;
 
 class BlogsPost extends React.Component {

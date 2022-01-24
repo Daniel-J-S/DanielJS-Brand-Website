@@ -18,13 +18,14 @@ class IndexPost extends React.Component {
           {data.data.allContentfulProduct.edges.map(items => { 
             const sizes = items.node.sizes.map((s, i) => s.size).join('|');
             return (
-            <Link to={`/${items.node.slug}`} key={items.node.id} className="Catalogue__item col-sm-12 col-md-6 col-lg-4 text-dark">
-            <div>
+              <div key={items.node.id} className="Catalogue__item col-sm-12 col-md-6 col-lg-4 text-dark">
               <div className="details_List">
                 {items.node.image === null ? <div className="no-image">No Image</div> : <Img sizes={items.node.image.fluid} />}
                 <div className="details_inner">
                   <h2>
-                    {items.node.name}
+                    <Link to={`/${items.node.slug}`} >
+                      {items.node.name}
+                    </Link>
                   </h2>
                   <p>{items.node.details.childMarkdownRemark.excerpt}</p>
                   <div className="row">
@@ -39,7 +40,6 @@ class IndexPost extends React.Component {
                         data-item-image={items.node.image === null ? "" : items.node.image.fluid.src}
                         data-item-name={items.node.name}
                         data-item-url={`/${items.node.slug}`}
-                        data-item-weight={items.node.weightCode}
                         data-item-custom1-name="Size"
                         data-item-custom1-options={sizes}
                       >
@@ -50,7 +50,6 @@ class IndexPost extends React.Component {
                 </div>
               </div>
             </div>
-            </Link>
           )})}
         </div>
       </React.Fragment>
@@ -134,7 +133,6 @@ export const query = graphql`
           name
           slug
           rating
-          weightCode
           sizes {
             size
           }
