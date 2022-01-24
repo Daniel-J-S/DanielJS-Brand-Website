@@ -20,7 +20,7 @@ const ReactWithDanCourseRegistration = ({ location, data: { course } }) => {
               <Img className="ml-0 mr-0 mt-0 mb-0" {...course.image} />
             </div>
             <div className="col-md-6 heading-section">
-              <h2>"{course.name}" Course</h2> 
+              <h2>"{course.name}" Course <small><i>(Currently Not Accepting Enrollees)</i></small></h2> 
               <span className="price">${course.price}.00</span>
               <br />
               <button
@@ -33,6 +33,8 @@ const ReactWithDanCourseRegistration = ({ location, data: { course } }) => {
                   data-item-shippable={false}
                   data-item-taxable={false}
                   data-item-weight={0}
+                  style={{opacity: .6, cursor: 'not-allowed'}}
+                  disabled={true}
                   >
                   <i className="fas fa-tags" />
                   Add to Cart
