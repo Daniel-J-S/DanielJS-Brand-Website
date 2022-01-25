@@ -66,7 +66,7 @@ const ProductDetails = data => {
                   data-item-custom1-name={showSizeSelection ? 'Size': null}
                   data-item-custom1-options={showSizeSelection || null || selectState.userSelection ? selectState.value + '|' + sizes.split('|').filter(s => s !== selectState.value).join('|') : sizes}
                   data-item-name={data.data.contentfulProduct.name}
-                  data-item-url={data.data.contentfulProduct.slug}
+                  data-item-url={data.data.contentfulProduct.slug}                
                   disabled={showSizeSelection ? !selectState.userSelection : false}
                   >
                   <i className="fas fa-shopping-bag" />
