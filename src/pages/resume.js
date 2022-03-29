@@ -1,14 +1,14 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import SEO from '../components/seo';
-import Img from 'gatsby-image'; 
+import Img from 'gatsby-image';
 
 function Resume({ data }) {
     return (
         <>
             <SEO title="My Resume" description="I am a self-motivated, hard-working, full-stack developer and educator with a strong passion for innovation and technology." />
-            <div style={{maxWidth: '850px'}} className="Page container">
-                <h2 style={{display: 'flex', alignItems: 'center'}}>{data.contentfulResume.title} <Img style={{ height: '4rem', width: '4rem', marginLeft: '1rem' }} className="rounded-circle img-fluid" sizes={data.contentfulResume.author.photo.sizes} /></h2>
+            <div style={{ maxWidth: '850px' }} className="Page container">
+                <h2 style={{ display: 'flex', alignItems: 'center' }}>{data.contentfulResume.title} <Img style={{ height: '4rem', width: '4rem', marginLeft: '1rem' }} className="rounded-circle img-fluid" sizes={data.contentfulResume.author.photo.sizes} /></h2>
                 <p>
                     <small><strong>Last Updated: {data.contentfulResume.updatedAt}</strong></small>
                 </p>
@@ -45,7 +45,7 @@ export const query = graphql`
                 srcSet
                 srcSetWebp
                 srcWebp
-                tracedSVG
+                
               }
             }
           }

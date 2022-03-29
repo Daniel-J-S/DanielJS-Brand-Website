@@ -7,27 +7,27 @@ import { graphql } from "gatsby";
 
 const disqusShortname = "danieljs";
 
-const BlogDetails = data => (
+const ArticleDetails = data => (
     <>
-        <SEO title={data.data.contentfulBlogs.title} keywords={[`gatsby`, `ecommerce`, `react`, `contentFul`, `Snipcart`]} />
-        <div className="blogs-page Page">
+        <SEO title={data.data.contentfulArticles.title} keywords={[`gatsby`, `ecommerce`, `react`, `contentFul`, `Snipcart`]} />
+        <div className="articles-page">
             <div className="post-thumbnail">
-                <Img sizes={data.data.contentfulBlogs.featureImage.fluid} />
+                <Img sizes={data.data.contentfulArticles.featureImage.fluid} />
             </div>
             <div className="container">
                 <div className="post-details">
-                    <h2 className="title">{data.data.contentfulBlogs.title}</h2>
+                    <h2 className="title">{data.data.contentfulArticles.title}</h2>
                     <div className="post-date">
                         <i className="fas fa-calendar-alt"></i>
-                        {data.data.contentfulBlogs.publicData}
+                        {data.data.contentfulArticles.publicData}
                     </div>
                     <div className="author">
-                        <Img sizes={data.data.contentfulBlogs.author.photo.fixed} />
-                        <strong className="name">{data.data.contentfulBlogs.author.name}</strong>
+                        <Img sizes={data.data.contentfulArticles.author.photo.fixed} />
+                        <strong className="name">{data.data.contentfulArticles.author.name}</strong>
                     </div>
                     <div
                         dangerouslySetInnerHTML={{
-                            __html: data.data.contentfulBlogs.description.childMarkdownRemark.html
+                            __html: data.data.contentfulArticles.description.childMarkdownRemark.html
                         }}
                     />
 
@@ -35,20 +35,20 @@ const BlogDetails = data => (
                 <DiscussionEmbed
                     shortname={disqusShortname}
                     config={{
-                        identifier: data.data.contentfulBlogs.id,
-                        title: data.data.contentfulBlogs.title
+                        identifier: data.data.contentfulArticles.id,
+                        title: data.data.contentfulArticles.title
                     }}
                 />
             </div>
         </div>
     </>
-)
+);
 
-export default BlogDetails
+export default ArticleDetails;
 
 export const query = graphql`
-  query BlogDetailsQuery($slug: String!) {
-        contentfulBlogs(slug: {eq: $slug }) {
+  query ArticleDetailsQuery($slug: String!) {
+        contentfulArticles(slug: {eq: $slug }) {
             id
             title
             slug
@@ -80,7 +80,7 @@ export const query = graphql`
                     srcSetWebp
                     sizes
                   }
+            }
         }
     }
-}
-`
+`;

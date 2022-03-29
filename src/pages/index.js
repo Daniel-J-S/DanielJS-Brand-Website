@@ -15,42 +15,43 @@ class IndexPost extends React.Component {
     return (
       <React.Fragment>
         <div className="row product-main">
-          {data.data.allContentfulProduct.edges.map(items => { 
+          {data.data.allContentfulProduct.edges.map(items => {
             const sizes = items.node.sizes.map((s, i) => s.size).join('|');
             return (
               <div key={items.node.id} className="Catalogue__item col-sm-12 col-md-6 col-lg-4 text-dark">
-              <div className="details_List">
-                {items.node.image === null ? <div className="no-image">No Image</div> : <Img sizes={items.node.image.fluid} />}
-                <div className="details_inner">
-                  <h2>
-                    <Link to={`/${items.node.slug}`} >
-                      {items.node.name}
-                    </Link>
-                  </h2>
-                  <p>{items.node.details.childMarkdownRemark.excerpt}</p>
-                  <div className="row">
-                    <div className="col-sm-4 align-self-center mb-3">
-                      <span className="price"><small>${items.node.price}</small></span>
-                    </div>
-                    <div className="col-sm-8 text-right align-self-center mb-3">
-                      <button
-                        className="btn btn-sm Product snipcart-add-item"
-                        data-item-id={items.node.slug}
-                        data-item-price={items.node.price}
-                        data-item-image={items.node.image === null ? "" : items.node.image.fluid.src}
-                        data-item-name={items.node.name}
-                        data-item-url={`/${items.node.slug}`}
-                        data-item-custom1-name="Size"
-                        data-item-custom1-options={sizes}
-                      >
-                        <i className="fas fa-shopping-bag" />Add to Cart
-                    </button>
+                <div className="details_List">
+                  {items.node.image === null ? <div className="no-image">No Image</div> : <Img sizes={items.node.image.fluid} />}
+                  <div className="details_inner">
+                    <h2>
+                      <Link to={`/${items.node.slug}`} >
+                        {items.node.name}
+                      </Link>
+                    </h2>
+                    <p>{items.node.details.childMarkdownRemark.excerpt}</p>
+                    <div className="row">
+                      <div className="col-sm-4 align-self-center mb-3">
+                        <span className="price"><small>${items.node.price}</small></span>
+                      </div>
+                      <div className="col-sm-8 text-right align-self-center mb-3">
+                        <button
+                          className="btn btn-sm Product snipcart-add-item"
+                          data-item-id={items.node.slug}
+                          data-item-price={items.node.price}
+                          data-item-image={items.node.image === null ? "" : items.node.image.fluid.src}
+                          data-item-name={items.node.name}
+                          data-item-url={`/${items.node.slug}`}
+                          data-item-custom1-name="Size"
+                          data-item-custom1-options={sizes}
+                        >
+                          <i className="fas fa-shopping-bag" />Add to Cart
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          )})}
+            )
+          })}
         </div>
       </React.Fragment>
     );
@@ -58,23 +59,23 @@ class IndexPost extends React.Component {
 }
 
 const IndexPage = data => {
-    const [bioLength, setBioLength] = useState(3);
+  const [bioLength, setBioLength] = useState(3);
 
-    const [show, setShow] = useState(true)
-    
-    function handleClick(value) {
-      setBioLength(value);
-    }
+  const [show, setShow] = useState(true)
 
-    function toggle() {
-      setShow(!show);
-    }
+  function handleClick(value) {
+    setBioLength(value);
+  }
 
-    return (
+  function toggle() {
+    setShow(!show);
+  }
+
+  return (
     <>
-      <SEO 
-        title="Home" 
-        keywords={[`gatsby`, `coding`, `react`, `learn to code`]} 
+      <SEO
+        title="Home"
+        keywords={[`gatsby`, `coding`, `react`, `learn to code`]}
         description={data.description}
         location={data.location}
       />
@@ -89,35 +90,35 @@ const IndexPage = data => {
               <button onMouseDown={toggle} onMouseUp={toggle} className={`btn btn-sm btn-${bioLength === 3 ? 'dark' : 'outline-dark'} ml-4`} onClick={() => handleClick(3)}>Long</button>
             </div>
           </div>
-            <div className="bio">
-              {
-                show &&
-                <p className="p-3 mb-3" style={{animation: 'fadeIn 1000ms ease-in forwards'}}>
-                  {bio[bioLength]}
-                </p>
-              }
-            </div>
-            <h3 className="mt-5">Connect With Daniel</h3>
-            <SocialIcons /> 
-            <div className="video-wrapper mt-5">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/N8BhbtIa0as" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-            </div>
+          <div className="bio">
+            {
+              show &&
+              <p className="p-3 mb-3" style={{ animation: 'fadeIn 1000ms ease-in forwards' }}>
+                {bio[bioLength]}
+              </p>
+            }
+          </div>
+          <h3 className="mt-5">Connect With Daniel</h3>
+          <SocialIcons />
+          <div className="video-wrapper mt-5">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/N8BhbtIa0as" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
           </div>
         </div>
-        
-        <div className="Blog-section mt-5">
-          <div className="container pt-5">
-            <h3>Swag Shop</h3>
-            <IndexPost data={data} />
-          </div>
+      </div>
+
+      <div className="Blog-section mt-5">
+        <div className="container pt-5">
+          <h3>Swag Shop</h3>
+          <IndexPost data={data} />
         </div>
-        <div className="Contact-us mt-5" id="contact">
-            <div className="container mt-3">
-              <h3 className="mt-5 pt-5">Contact Me</h3>
-                <Form />
-            </div>
+      </div>
+      <div className="Contact-us mt-5" id="contact">
+        <div className="container mt-3">
+          <h3 className="mt-5 pt-5">Contact Me</h3>
+          <Form />
         </div>
-  
+      </div>
+
     </>
   )
 }
@@ -190,7 +191,7 @@ export const query = graphql`
       }
       date(formatString: "D MMMM, YYYY")
     }
-    allContentfulBlogs(limit: 3,sort:{fields:createdAt,order: DESC}) {
+    allContentfulArticles(limit: 3,sort:{fields:createdAt,order: DESC}) {
       edges {
         node {
           id

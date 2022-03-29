@@ -1,14 +1,14 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import SEO from '../components/seo';
-import Img from 'gatsby-image'; 
+import Img from 'gatsby-image';
 
 function IntroToCoding({ data }) {
     return (
         <>
             <SEO title="Intro to Coding" description="In this tutorial, we'll learn the fundamentals of web development and build our first website" />
-            <div style={{maxWidth: '850px'}} className="Page container">
-                <h2 style={{display: 'flex', alignItems: 'center'}}>{data.contentfulTutorial.title} <Img style={{ height: '4rem', width: '4rem', marginLeft: '1rem' }} className="rounded-circle img-fluid" sizes={data.contentfulTutorial.author.photo.sizes} /></h2>
+            <div style={{ maxWidth: '850px' }} className="Page container">
+                <h2 style={{ display: 'flex', alignItems: 'center' }}>{data.contentfulTutorial.title} <Img style={{ height: '4rem', width: '4rem', marginLeft: '1rem' }} className="rounded-circle img-fluid" sizes={data.contentfulTutorial.author.photo.sizes} /></h2>
                 <p>
                     <small><strong>Last Updated: {data.contentfulTutorial.updatedAt}</strong></small>
                 </p>
@@ -42,7 +42,7 @@ export const query = graphql`
                 srcSet
                 srcSetWebp
                 srcWebp
-                tracedSVG
+                
               }
             }
           }

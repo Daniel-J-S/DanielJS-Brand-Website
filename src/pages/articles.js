@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
-import SEO from '../src/components/seo';
-import { graphql } from 'gatsby';;
+import SEO from '../components/seo';
+import { graphql } from 'gatsby';
 
-class BlogsPost extends React.Component {
+class ArticlePost extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -39,8 +39,8 @@ class BlogsPost extends React.Component {
 
     return (
       <React.Fragment>
-        <ul className="blog-list" onScroll={this.onScrollEvent}>
-          {data.data.allContentfulBlogs.edges.slice(0, NoOfPost).map(items => (
+        <ul className="article-list" onScroll={this.onScrollEvent}>
+          {data.data.allContentfulArticles.edges.slice(0, NoOfPost).map(items => (
             <li>
               <div className="post-item template-square columned">
                 <div className="post-thumbnail">
@@ -68,25 +68,24 @@ class BlogsPost extends React.Component {
   }
 }
 
-const Blogs = data => (
-
+const Articles = data => (
   <>
-    <SEO 
-      title="Blogs" 
-      keywords={[`gatsby`, `blogs`, `react`]} 
+    <SEO
+      title="Articles"
+      keywords={[`gatsby`, `articles`, `react`]}
       location={data.location}
     />
-    <div className="container blog-page">
-      <BlogsPost data={data}></BlogsPost>
+    <div className="container article-page Page">
+      <ArticlePost data={data} />
     </div>
   </>
 )
 
-export default Blogs
+export default Articles;
 
 export const query = graphql`
-  query BlogsQuery {
-    allContentfulBlogs {
+  query ArticleQuery {
+    allContentfulArticles {
         edges {
           node {
             id
@@ -127,7 +126,7 @@ export const query = graphql`
         }
       }
   }
-`
+`;
 
 
 

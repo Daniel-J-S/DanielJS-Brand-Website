@@ -33,54 +33,55 @@ const ResponsiveNav = ({ location, darkenBackground, setDarkenBackground }) => {
   };
 
   const toggleNav = () => {
-    if(isSmallScreen) {
+    if (isSmallScreen) {
       setDarkenBackground(!darkenBackground);
     }
     setNavVisibility(!isNavVisible);
   };
 
-    function handleNav(id) {
-        if(location && location.pathname !== '/') {
-        navigate(`/#${id}`);
-        } else {
-        scrollTo(`#${id}`);
-        }
-        toggleNav();
+  function handleNav(id) {
+    if (location && location.pathname !== '/') {
+      navigate(`/#${id}`);
+    } else {
+      scrollTo(`#${id}`);
     }
+    toggleNav();
+  }
 
   const links = (
-      <>
-        {/* <Link onClick={toggleNav} activeStyle={{margin: 0}} activeClassName={!isSmallScreen ? 'with-underline' : ''} className="nav-link" to="/videos">Tutorials</Link> */}
-        <Link onClick={toggleNav} activeStyle={{margin: 0}} activeClassName={!isSmallScreen ? 'with-underline' : ''} className="nav-link" to="/proposal-request">Proposal Request</Link>
-        <span onKeyDown={() => handleNav('contact')} tabIndex="0" role="link" className="nav-link" onClick={() => handleNav('contact')}>Contact Me</span>
-        <Link onClick={toggleNav} activeStyle={{margin: 0}} activeClassName={!isSmallScreen ? 'with-underline' : ''} className="nav-link" to="/resume">Resume</Link>
-        {/* <Link onClick={toggleNav} activeStyle={{margin: 0}} activeClassName={!isSmallScreen ? 'with-underline' : ''} className="nav-link" to="/portfolio">Portfolio</Link> */}
-      </>
+    <>
+      {/* <Link onClick={toggleNav} activeStyle={{margin: 0}} activeClassName={!isSmallScreen ? 'with-underline' : ''} className="nav-link" to="/videos">Tutorials</Link> */}
+      <Link onClick={toggleNav} activeStyle={{ margin: 0 }} activeClassName={!isSmallScreen ? 'with-underline' : ''} className="nav-link" to="/articles">Articles</Link>
+      <Link onClick={toggleNav} activeStyle={{ margin: 0 }} activeClassName={!isSmallScreen ? 'with-underline' : ''} className="nav-link" to="/proposal-request">Proposal Request</Link>
+      <span onKeyDown={() => handleNav('contact')} tabIndex="0" role="link" className="nav-link" onClick={() => handleNav('contact')}>Contact Me</span>
+      <Link onClick={toggleNav} activeStyle={{ margin: 0 }} activeClassName={!isSmallScreen ? 'with-underline' : ''} className="nav-link" to="/resume">Resume</Link>
+      {/* <Link onClick={toggleNav} activeStyle={{margin: 0}} activeClassName={!isSmallScreen ? 'with-underline' : ''} className="nav-link" to="/portfolio">Portfolio</Link> */}
+    </>
   );
 
-  const handleMutations = function(mutations) {
-    mutations.forEach(function(mutation) {
-        if(mutation.target.innerHTML === "0") {
-          setShowItemsCount(false)
-        } else {
-          setShowItemsCount(true)
-        }
+  const handleMutations = function (mutations) {
+    mutations.forEach(function (mutation) {
+      if (mutation.target.innerHTML === "0") {
+        setShowItemsCount(false)
+      } else {
+        setShowItemsCount(true)
+      }
     });
   }
 
-  if(typeof window !== "undefined") {
+  if (typeof window !== "undefined") {
     const observer = new MutationObserver(handleMutations);
 
-    if(itemsCount.current) {
+    if (itemsCount.current) {
       observer.observe(itemsCount.current, { childList: true });
     }
   }
-  
+
 
 
   return (
-    <div className="nav-wrapper" style={{boxShadow: !isNavVisible ? '0 4px 8px 0 rgba(0, 0, 0, 0.2)': 'none !important'}}>
-      <Link to="/" onClick={() => {setNavVisibility(false); setDarkenBackground(false)}}>
+    <div className="nav-wrapper" style={{ boxShadow: !isNavVisible ? '0 4px 8px 0 rgba(0, 0, 0, 0.2)' : 'none !important' }}>
+      <Link to="/" onClick={() => { setNavVisibility(false); setDarkenBackground(false) }}>
         <img className="logo" src={logo} alt="logo" />
       </Link>
       <CSSTransition
@@ -90,25 +91,25 @@ const ResponsiveNav = ({ location, darkenBackground, setDarkenBackground }) => {
         unmountOnExit
       >
         <nav className="nav">
-          { links }
+          {links}
         </nav>
       </CSSTransition>
       {
         !isSmallScreen &&
         <nav className="nav">
-          { links }
+          {links}
         </nav>
       }
       <div className="header-cart">
-        <span style={{visibility: showItemsCount ? 'visible' : 'hidden'}} className="Header__summary snipcart-summary snipcart-checkout">
+        <span style={{ visibility: showItemsCount ? 'visible' : 'hidden' }} className="Header__summary snipcart-summary snipcart-checkout">
           <div ref={itemsCount} className="snipcart-items-count" />
           <i className="fas fa-sm fa-shopping-bag" />
         </span>
       </div>
       <button onClick={toggleNav} className="burger">
-        <div className={isNavVisible ? 'burger-animate': 'fixed'} />
-        <div className={isNavVisible ? 'burger-animate': 'fixed'} />
-        <div className={isNavVisible ? 'burger-animate': 'fixed'} />
+        <div className={isNavVisible ? 'burger-animate' : 'fixed'} />
+        <div className={isNavVisible ? 'burger-animate' : 'fixed'} />
+        <div className={isNavVisible ? 'burger-animate' : 'fixed'} />
       </button>
     </div>
   );

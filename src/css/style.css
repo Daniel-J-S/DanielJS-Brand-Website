@@ -473,7 +473,7 @@ pre code:after,pre code:before,pre tt:after,pre tt:before {
   outline: 0
 }
 
-.product-main .details_List,ul.blog-list li .post-item .post-thumbnail {
+.product-main .details_List,ul.article-list li .post-item .post-thumbnail {
   -webkit-box-shadow: 0 5px 10px -3px rgba(0,0,0,.25);
   box-shadow: 0 5px 10px -3px rgba(0,0,0,.25);
   -webkit-transition: -webkit-box-shadow .2s;
@@ -486,7 +486,7 @@ pre code:after,pre code:before,pre tt:after,pre tt:before {
   border: 1px solid #cccccc73
 }
 
-.product-main .details_List:hover,ul.blog-list li:hover .post-item .post-thumbnail {
+.product-main .details_List:hover,ul.article-list li:hover .post-item .post-thumbnail {
   -webkit-box-shadow: 0 10px 20px -6px rgba(0,0,0,.5);
   box-shadow: 0 10px 20px -6px rgba(0,0,0,.5)
 }
@@ -653,7 +653,7 @@ footer.site-footer {
   background: #000!important
 }
 
-.product-details .gatsby-image-wrapper,ul.blog-list li {
+.product-details .gatsby-image-wrapper,ul.article-list li {
   margin-bottom: 30px
 }
 
@@ -910,32 +910,32 @@ span.price {
   font-size: 22px
 }
 
-ul.blog-list,ul.latest-blog {
+ul.article-list,ul.latest-blog {
   list-style: none;
   margin: 30px 0;
   padding: 0
 }
 
-ul.blog-list li .post-item {
+ul.article-list li .post-item {
   flex-flow: row
 }
 
-ul.blog-list li .post-item .post-thumbnail {
+ul.article-list li .post-item .post-thumbnail {
   margin-right: 30px;
   width: 40%;
   position: relative
 }
 
-ul.blog-list li .post-item .post-thumbnail .gatsby-image-wrapper {
+ul.article-list li .post-item .post-thumbnail .gatsby-image-wrapper {
   width: 100%;
   height: 300px
 }
 
-ul.blog-list li .post-item .post-details {
+ul.article-list li .post-item .post-details {
   width: 60%
 }
 
-.author,div.latest-posts,ul.blog-list li .post-item {
+.author,div.latest-posts,ul.article-list li .post-item {
   display: flex;
   align-items: center
 }
@@ -958,11 +958,11 @@ ul.blog-list li .post-item .post-details {
   font-size: 17px
 }
 
-ul.blog-list li .post-item .post-details .post-title {
+ul.article-list li .post-item .post-details .post-title {
   margin: 0 0 15px
 }
 
-ul.blog-list li .post-item .post-details .post-title a {
+ul.article-list li .post-item .post-details .post-title a {
   color: #333;
   font-size: 28px
 }
@@ -1068,37 +1068,37 @@ ul.latest-blog li .inner a {
   border: 1px solid #333
 }
 
-.blogs-page {
+.articles-page {
   background: #fafafa;
   width: 100%;
   display: inline-block
 }
 
-.blogs-page .post-details {
+.articles-page .post-details {
   background: #fff;
   padding: 30px;
   margin: 30px 0;
   box-sizing: border-box
 }
 
-.blogs-page .post-thumbnail {
+.articles-page .post-thumbnail {
   position: relative
 }
 
-.blogs-page .post-thumbnail .gatsby-image-wrapper {
+.articles-page .post-thumbnail .gatsby-image-wrapper {
   height: 550px
 }
 
-.blogs-page .post-details .post-date {
+.articles-page .post-details .post-date {
   margin-bottom: 20px;
   font-size: 14px
 }
 
-.blogs-page .post-details .post-date i {
+.articles-page .post-details .post-date i {
   margin-right: 5px
 }
 
-.blogs-page .post-details .author,div#disqus_thread {
+.articles-page .post-details .author,div#disqus_thread {
   margin-bottom: 30px
 }
 
@@ -1130,7 +1130,7 @@ div#disqus_thread {
   margin-right: 10px
 }
 
-ul.blog-list li .post-item .post-thumbnail .post-date {
+ul.article-list li .post-item .post-thumbnail .post-date {
   position: absolute;
   bottom: 10px;
   right: 10px;
@@ -1139,7 +1139,7 @@ ul.blog-list li .post-item .post-thumbnail .post-date {
   font-size: 16px
 }
 
-ul.blog-list li .post-item .post-details .post-date i.fas,ul.blog-list li .post-item .post-thumbnail .post-date i.fas {
+ul.article-list li .post-item .post-details .post-date i.fas,ul.article-list li .post-item .post-thumbnail .post-date i.fas {
   margin-right: 10px
 }
 
@@ -1498,25 +1498,25 @@ a.header-logo img {
       width: 50%
   }
 
-  ul.blog-list li .post-item .post-thumbnail {
+  ul.article-list li .post-item .post-thumbnail {
       width: 100%
   }
 
-  ul.blog-list li .post-item .post-details {
+  ul.article-list li .post-item .post-details {
       width: 100%;
       margin-top: 30px;
       padding: 0 10px
   }
 
-  ul.blog-list li .post-item {
+  ul.article-list li .post-item {
       display: block
   }
 
-  ul.blog-list li {
+  ul.article-list li {
       margin-bottom: 40px
   }
 
-  .blogs-page .post-details,div#disqus_thread {
+  .articles-page .post-details,div#disqus_thread {
       background: 0 0;
       padding: 0
   }
@@ -1646,11 +1646,11 @@ a.header-logo img {
       font-size: 14px
   }
 
-  ul.blog-list li .post-item .post-thumbnail .gatsby-image-wrapper {
+  ul.article-list li .post-item .post-thumbnail .gatsby-image-wrapper {
       height: 200px
   }
 
-  .blogs-page .post-thumbnail .gatsby-image-wrapper {
+  .articles-page .post-thumbnail .gatsby-image-wrapper {
       height: auto
   }
 
