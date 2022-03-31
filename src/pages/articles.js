@@ -56,7 +56,7 @@ class ArticlePost extends React.Component {
                     <Img sizes={items.node.author.photo.fluid} />
                     <strong className="name">{items.node.author.name}</strong>
                   </div>
-                  <p><small>Time to read: {items.node.description.childMarkdownRemark.timeToRead} mins</small></p>
+                  <p><small className="text-muted">Time to read: {items.node.description.childMarkdownRemark.timeToRead} mins</small></p>
                   <p>{items.node.description.childMarkdownRemark.excerpt}</p>
                 </div>
               </div>

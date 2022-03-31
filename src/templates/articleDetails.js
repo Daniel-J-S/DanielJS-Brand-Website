@@ -21,6 +21,7 @@ const ArticleDetails = data => (
                         <i className="fas fa-calendar-alt"></i>
                         {data.data.contentfulArticles.publicData}
                     </div>
+                    <p><small className="text-muted">Time to read: {data.data.contentfulArticles.description.childMarkdownRemark.timeToRead} mins</small></p>
                     <div className="author">
                         <Img sizes={data.data.contentfulArticles.author.photo.fixed} />
                         <strong className="name">{data.data.contentfulArticles.author.name}</strong>
@@ -67,7 +68,7 @@ export const query = graphql`
             description {
                 childMarkdownRemark {
                     html
-                    excerpt(pruneLength: 250)
+                    timeToRead
                 }
             }
             featureImage {
