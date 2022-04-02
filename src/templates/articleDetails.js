@@ -7,33 +7,33 @@ import { graphql } from "gatsby";
 
 const disqusShortname = "danieljs";
 
-const ArticleDetails = data => (
+const ArticleDetails = ({ data: { contentfulArticle } }) => (
     <>
         <SEO
-            title={data.data.contentfulArticle.title}
-            keywords={data.data.contentfulArticle.keywords.map(k => k.identifier)}
-            description={data.data.contentfulArticle.description}
-            featuredImage={data.data.contentfulArticle.author.photo.fixed.src}
+            title={contentfulArticle.title}
+            keywords={contentfulArticle.keywords.map(k => k.identifier)}
+            description={contentfulArticle.description}
+            featuredImage={contentfulArticle.author.photo.fixed.src}
         />
         <div className="articles-page">
             <div className="post-thumbnail">
-                <Img sizes={data.data.contentfulArticle.featureImage.fluid} />
+                <Img sizes={contentfulArticle.featureImage.fluid} />
             </div>
             <div className="container">
                 <div className="post-details">
-                    <h2 className="title">{data.data.contentfulArticle.title}</h2>
+                    <h2 className="title">{contentfulArticle.title}</h2>
                     <div className="post-date">
                         <i className="fas fa-calendar-alt"></i>
-                        {data.data.contentfulArticle.publicData}
+                        {contentfulArticle.publicData}
                     </div>
-                    <p><small className="text-muted">Time to read: {data.data.contentfulArticle.body.childMarkdownRemark.timeToRead} mins</small></p>
+                    <p><small className="text-muted">Time to read: {contentfulArticle.body.childMarkdownRemark.timeToRead} mins</small></p>
                     <div className="author">
-                        <Img sizes={data.data.contentfulArticle.author.photo.fixed} />
-                        <strong className="name">{data.data.contentfulArticle.author.name}</strong>
+                        <Img sizes={contentfulArticle.author.photo.fixed} />
+                        <strong className="name">{contentfulArticle.author.name}</strong>
                     </div>
                     <div
                         dangerouslySetInnerHTML={{
-                            __html: data.data.contentfulArticle.body.childMarkdownRemark.html
+                            __html: contentfulArticle.body.childMarkdownRemark.html
                         }}
                     />
 
@@ -41,8 +41,8 @@ const ArticleDetails = data => (
                 <DiscussionEmbed
                     shortname={disqusShortname}
                     config={{
-                        identifier: data.data.contentfulArticle.id,
-                        title: data.data.contentfulArticle.title
+                        identifier: contentfulArticle.id,
+                        title: contentfulArticle.title
                     }}
                 />
             </div>
