@@ -191,7 +191,7 @@ export const query = graphql`
       }
       date(formatString: "D MMMM, YYYY")
     }
-    allContentfulArticles(limit: 3,sort:{fields:createdAt,order: DESC}) {
+    allContentfulArticle(limit: 3,sort:{fields:createdAt,order: DESC}) {
       edges {
         node {
           id

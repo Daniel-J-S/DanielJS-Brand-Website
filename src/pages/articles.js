@@ -40,7 +40,7 @@ class ArticlePost extends React.Component {
     return (
       <React.Fragment>
         <ul className="article-list" onScroll={this.onScrollEvent}>
-          {data.data.allContentfulArticles.edges.slice(0, NoOfPost).map(items => (
+          {data.data.allContentfulArticle.edges.slice(0, NoOfPost).map(items => (
             <li>
               <div className="post-item template-square columned">
                 <div className="post-thumbnail">
@@ -85,7 +85,7 @@ export default Articles;
 
 export const query = graphql`
   query ArticleQuery {
-    allContentfulArticles {
+    allContentfulArticle {
         edges {
           node {
             id

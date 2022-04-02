@@ -9,26 +9,31 @@ const disqusShortname = "danieljs";
 
 const ArticleDetails = data => (
     <>
-        <SEO title={data.data.contentfulArticles.title} keywords={[`gatsby`, `ecommerce`, `react`, `contentFul`, `Snipcart`]} />
+        <SEO
+            title={data.data.contentfulArticle.title}
+            keywords={data.data.contentfulArticle.keywords.map(k => k.identifier)}
+            description={data.data.contentfulArticle.description}
+            featuredImage={data.data.contentfulArticle.author.photo.fixed.src}
+        />
         <div className="articles-page">
             <div className="post-thumbnail">
-                <Img sizes={data.data.contentfulArticles.featureImage.fluid} />
+                <Img sizes={data.data.contentfulArticle.featureImage.fluid} />
             </div>
             <div className="container">
                 <div className="post-details">
-                    <h2 className="title">{data.data.contentfulArticles.title}</h2>
+                    <h2 className="title">{data.data.contentfulArticle.title}</h2>
                     <div className="post-date">
                         <i className="fas fa-calendar-alt"></i>
-                        {data.data.contentfulArticles.publicData}
+                        {data.data.contentfulArticle.publicData}
                     </div>
-                    <p><small className="text-muted">Time to read: {data.data.contentfulArticles.body.childMarkdownRemark.timeToRead} mins</small></p>
+                    <p><small className="text-muted">Time to read: {data.data.contentfulArticle.body.childMarkdownRemark.timeToRead} mins</small></p>
                     <div className="author">
-                        <Img sizes={data.data.contentfulArticles.author.photo.fixed} />
-                        <strong className="name">{data.data.contentfulArticles.author.name}</strong>
+                        <Img sizes={data.data.contentfulArticle.author.photo.fixed} />
+                        <strong className="name">{data.data.contentfulArticle.author.name}</strong>
                     </div>
                     <div
                         dangerouslySetInnerHTML={{
-                            __html: data.data.contentfulArticles.body.childMarkdownRemark.html
+                            __html: data.data.contentfulArticle.body.childMarkdownRemark.html
                         }}
                     />
 
@@ -36,8 +41,8 @@ const ArticleDetails = data => (
                 <DiscussionEmbed
                     shortname={disqusShortname}
                     config={{
-                        identifier: data.data.contentfulArticles.id,
-                        title: data.data.contentfulArticles.title
+                        identifier: data.data.contentfulArticle.id,
+                        title: data.data.contentfulArticle.title
                     }}
                 />
             </div>
@@ -49,10 +54,17 @@ export default ArticleDetails;
 
 export const query = graphql`
   query ArticleDetailsQuery($slug: String!) {
-        contentfulArticles(slug: {eq: $slug }) {
+        contentfulArticle(slug: {eq: $slug }) {
             id
             title
             slug
+            tags {
+                identifier
+            }
+            keywords {
+                identifier
+            }
+            description
             publicData(formatString: "MMMM D, YYYY")
             author {
             name

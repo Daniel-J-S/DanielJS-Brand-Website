@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import ogImage from '../images/og-image.png';
 
-function SEO({ description, lang, meta, keywords, title, location }) {
+function SEO({ description, lang, meta, keywords, title, location, featuredImage }) {
 
   const { site } = useStaticQuery(
     graphql`
@@ -48,7 +48,7 @@ function SEO({ description, lang, meta, keywords, title, location }) {
         },
         {
           property: `og:image`,
-          content: `https://danieljs.io/${ogImage}`,
+          content: featuredImage ? `https:${featuredImage}` : `https://danieljs.io/${ogImage}`,
         },
         {
           name: `twitter:card`,

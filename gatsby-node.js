@@ -16,7 +16,7 @@ exports.createPages = ({ graphql, actions }) => {
               }
             }
           }
-          allContentfulArticles {
+          allContentfulArticle {
             edges {
               node {
                 id
@@ -38,7 +38,7 @@ exports.createPages = ({ graphql, actions }) => {
             },
           })
         });
-        result.data.allContentfulArticles.edges.forEach(data => {
+        result.data.allContentfulArticle.edges.forEach(data => {
           createPage({
             path: data.node.slug,
             component: ArticleTemplate,
