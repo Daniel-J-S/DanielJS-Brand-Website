@@ -76,7 +76,7 @@ const IndexPage = data => {
       <SEO
         title="Home"
         keywords={[`gatsby`, `coding`, `react`, `learn to code`]}
-        description={data.description}
+        description={"Daniel has had a lifetime passion for web development. At the peak of his last career in finance, Daniel realized he wanted to develop software full-time, so he resigned from his job to open a Web Development Studio."}
         location={data.location}
       />
       <Banner BannerData={data.data.allContentfulHeaderBanner.edges} />
