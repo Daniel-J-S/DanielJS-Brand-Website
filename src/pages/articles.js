@@ -56,8 +56,8 @@ class ArticlePost extends React.Component {
                     <Img sizes={items.node.author.photo.fluid} />
                     <strong className="name">{items.node.author.name}</strong>
                   </div>
-                  <p><small className="text-muted">Time to read: {items.node.description.childMarkdownRemark.timeToRead} mins</small></p>
-                  <p>{items.node.description.childMarkdownRemark.excerpt}</p>
+                  <p><small className="text-muted">Time to read: {items.node.body.childMarkdownRemark.timeToRead} mins</small></p>
+                  <p>{items.node.body.childMarkdownRemark.excerpt}</p>
                 </div>
               </div>
             </li>
@@ -106,7 +106,7 @@ export const query = graphql`
                 }
               }
             }
-            description {
+            body {
               childMarkdownRemark {
                 excerpt(pruneLength: 250)
                 timeToRead  

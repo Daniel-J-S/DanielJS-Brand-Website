@@ -21,14 +21,14 @@ const ArticleDetails = data => (
                         <i className="fas fa-calendar-alt"></i>
                         {data.data.contentfulArticles.publicData}
                     </div>
-                    <p><small className="text-muted">Time to read: {data.data.contentfulArticles.description.childMarkdownRemark.timeToRead} mins</small></p>
+                    <p><small className="text-muted">Time to read: {data.data.contentfulArticles.body.childMarkdownRemark.timeToRead} mins</small></p>
                     <div className="author">
                         <Img sizes={data.data.contentfulArticles.author.photo.fixed} />
                         <strong className="name">{data.data.contentfulArticles.author.name}</strong>
                     </div>
                     <div
                         dangerouslySetInnerHTML={{
-                            __html: data.data.contentfulArticles.description.childMarkdownRemark.html
+                            __html: data.data.contentfulArticles.body.childMarkdownRemark.html
                         }}
                     />
 
@@ -65,7 +65,7 @@ export const query = graphql`
                 }
             }
             }
-            description {
+            body {
                 childMarkdownRemark {
                     html
                     timeToRead
