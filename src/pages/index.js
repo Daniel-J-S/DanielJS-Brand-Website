@@ -4,6 +4,7 @@ import Img from 'gatsby-image';
 import SEO from '../components/seo';
 import Form from '../components/form';
 import Banner from '../components/banner';
+import ArticlePost from '../components/articlePost';
 import SocialIcons from '../components/social-icons';
 import { graphql } from 'gatsby';
 import bio from '../data/bio.json';
@@ -11,11 +12,11 @@ import bio from '../data/bio.json';
 
 class IndexPost extends React.Component {
   render() {
-    const { data } = this.props;
+    const { allContentfulProduct } = this.props;
     return (
       <React.Fragment>
         <div className="row product-main">
-          {data.data.allContentfulProduct.edges.map(items => {
+          {allContentfulProduct.edges.map(items => {
             const sizes = items.node.sizes.map((s, i) => s.size).join('|');
             return (
               <div key={items.node.id} className="Catalogue__item col-sm-12 col-md-6 col-lg-4 text-dark">
@@ -58,7 +59,7 @@ class IndexPost extends React.Component {
   }
 }
 
-const IndexPage = data => {
+const IndexPage = ({ data: { allContentfulHeaderBanner, allContentfulProduct, allContentfulArticle }, location }) => {
   const [bioLength, setBioLength] = useState(3);
 
   const [show, setShow] = useState(true)
@@ -77,9 +78,9 @@ const IndexPage = data => {
         title="Home"
         keywords={[`gatsby`, `coding`, `react`, `learn to code`]}
         description={"Daniel has had a lifetime passion for web development. At the peak of his last career in finance, Daniel realized he wanted to develop software full-time, so he resigned from his job to open a Web Development Studio."}
-        location={data.location}
+        location={location}
       />
-      <Banner BannerData={data.data.allContentfulHeaderBanner.edges} />
+      <Banner BannerData={allContentfulHeaderBanner.edges} />
       <div className="container HomePage">
         <div className="text-center">
           <div className="with-underline p-3 mb-5 text-center">
@@ -108,8 +109,14 @@ const IndexPage = data => {
 
       <div className="Blog-section mt-5">
         <div className="container pt-5">
+          <h3>Recent Articles</h3>
+          <ArticlePost allContentfulArticle={allContentfulArticle} numPosts={3} />
+        </div>
+      </div>
+      <div className="Blog-section mt-5">
+        <div className="container pt-5">
           <h3>Swag Shop</h3>
-          <IndexPost data={data} />
+          <IndexPost allContentfulProduct={allContentfulProduct} />
         </div>
       </div>
       <div className="Contact-us mt-5" id="contact">
@@ -197,6 +204,26 @@ export const query = graphql`
           id
           title
           slug
+          author {
+            name
+            photo {
+              fluid(maxWidth: 350) {
+                base64
+                aspectRatio
+                src
+                srcSet
+                srcWebp
+                srcSetWebp
+                sizes
+              }
+            }
+          }
+          body {
+            childMarkdownRemark {
+              excerpt(pruneLength: 250)
+              timeToRead  
+            }
+          }
           featureImage {
             fluid(maxWidth: 1120) {
               base64
