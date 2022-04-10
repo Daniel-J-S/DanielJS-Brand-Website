@@ -473,7 +473,7 @@ pre code:after,pre code:before,pre tt:after,pre tt:before {
   outline: 0
 }
 
-.post-item {
+.post-item:not(:first-child) {
   margin-top: 5rem !important;
 }
 

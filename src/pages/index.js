@@ -125,7 +125,6 @@ const IndexPage = ({ data: { allContentfulHeaderBanner, allContentfulProduct, al
           <Form />
         </div>
       </div>
-
     </>
   )
 }
