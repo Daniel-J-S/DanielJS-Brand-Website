@@ -7,9 +7,9 @@ function ArticlePost({ allContentfulArticle, numPosts }) {
     return (
         <Fragment>
             <ul className="article-list">
-                {allContentfulArticle.edges.slice(0, numPosts).map(({ node }) => (
+                {allContentfulArticle.edges.slice(0, numPosts).map(({ node }, index) => (
                     <li>
-                        <div className="post-item template-square columned">
+                        <div className="post-item template-square columned" style={{ marginTop: index === 0 ? '1rem': '5rem'}}>
                             <div className="post-thumbnail">
                                 <Img sizes={node.featureImage.fluid} />
                                 <div className="post-date">

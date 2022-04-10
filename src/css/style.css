@@ -473,10 +473,6 @@ pre code:after,pre code:before,pre tt:after,pre tt:before {
   outline: 0
 }
 
-.post-item:not(.post-item:first-of-type) {
-  margin-top: 5rem !important;
-}
-
 .product-main .details_List,ul.article-list li .post-item .post-thumbnail {
   -webkit-box-shadow: 0 5px 10px -3px rgba(0,0,0,.25);
   box-shadow: 0 5px 10px -3px rgba(0,0,0,.25);
