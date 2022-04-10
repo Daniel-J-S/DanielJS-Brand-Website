@@ -8,7 +8,7 @@ function ArticlePost({ allContentfulArticle, numPosts }) {
         <Fragment>
             <ul className="article-list">
                 {allContentfulArticle.edges.slice(0, numPosts).map(({ node }) => (
-                    <li className="mt-3">
+                    <li>
                         <div className="post-item template-square columned">
                             <div className="post-thumbnail">
                                 <Img sizes={node.featureImage.fluid} />
