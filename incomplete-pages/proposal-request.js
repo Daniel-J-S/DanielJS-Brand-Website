@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { navigate } from 'gatsby';
-import SEO from '../components/seo';
+import SEO from '../src/components/seo';
 
 function WorkRequest({ location }) {
     const [state, setState] = useState(resetState());
