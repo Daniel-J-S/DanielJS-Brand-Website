@@ -4,7 +4,6 @@ import Img from 'gatsby-image';
 
 
 function ArticlePost({ allContentfulArticle, numPosts }) {
-    console.log({ allContentfulArticle, numPosts })
     return (
         <Fragment>
             <ul className="article-list">
