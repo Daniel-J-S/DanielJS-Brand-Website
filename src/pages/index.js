@@ -113,12 +113,12 @@ const IndexPage = ({ data: { allContentfulHeaderBanner, allContentfulProduct, al
           <ArticlePost allContentfulArticle={allContentfulArticle} numPosts={3} />
         </div>
       </div>
-      <div className="Blog-section mt-5">
+      {/* <div className="Blog-section mt-5">
         <div className="container pt-5">
           <h3>Swag Shop</h3>
           <IndexPost allContentfulProduct={allContentfulProduct} />
         </div>
-      </div>
+      </div> */}
       <div className="Contact-us mt-5" id="contact">
         <div className="container mt-3">
           <h3 className="mt-5 pt-5">Contact Me</h3>

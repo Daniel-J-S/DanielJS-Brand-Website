@@ -8,11 +8,11 @@ function IndexPost ({ services }) {
     return (
         <React.Fragment>
           <div className="row product-main">
-            {services.edges.sort((a, b) => b.node.title - a.node.title).map(({ node: { id, title, description, image }}) => {
+            {services.edges.sort((a, b) => a.node.ranking - b.node.ranking).map(({ node: { id, title, description, image }}) => {
               return (
                 <div key={id} className="Catalogue__item col-sm-12 col-md-6 col-lg-4 text-dark mt-4">
-                  <div className="details_List">
-                    {image === null ? <div className="no-image">No Image</div> : <Img sizes={image.fluid} />}
+                  <div className="details_List no-hover border-dark rounded">
+                    {image === null ? <div className="no-image">No Image</div> : <Img className="border-bottom border-dark" sizes={image.fluid} />}
                     <div className="details_inner">
                       <h2>
                           {title}
@@ -73,12 +73,13 @@ function WorkRequest({ location, data: { allContentfulService }}) {
             <SEO title="Request for Web Development" description="Need a new website or updates to an existing site? I would love to dicuss how we can optimize your web presence" />
             <div className="Contact-us mt-5 Page">
                 <div className="container">
-                <div className="Blog-section mt-5">
-                    <div className="pt-5">
-                        <h1>Services</h1>
-                        <IndexPost services={allContentfulService} />
+                    <div className="Blog-section mt-5">
+                        <div className="pt-5">
+                            <h1>Services</h1>
+                            <IndexPost services={allContentfulService} />
+                            </div>
                         </div>
-                    </div>
+                    <div className="container p-5">
                     <h2>Request a Proposal</h2>
                     <p>Need a new website or updates to an existing site? I would love to dicuss how we can optimize your web presence.</p>
                     {state.formSubmitted ? <p>Thank you for contacting me!</p> :
@@ -109,6 +110,7 @@ function WorkRequest({ location, data: { allContentfulService }}) {
                             </div>
                         </form>
                     }
+                    </div>
                 </div>
             </div>
         </>
@@ -122,6 +124,7 @@ export const query = graphql`
                 node {
                     id
                     title
+                    ranking
                     description {
                         childMarkdownRemark {
                             html

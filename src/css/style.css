@@ -1693,3 +1693,8 @@ a.header-logo img {
       padding-left: 15px
   }
 }
+
+.no-hover {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
