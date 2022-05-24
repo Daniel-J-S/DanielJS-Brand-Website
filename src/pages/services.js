@@ -10,7 +10,7 @@ function IndexPost ({ services }) {
           <div className="row product-main">
             {services.edges.sort((a, b) => b.node.title - a.node.title).map(({ node: { id, title, description, image }}) => {
               return (
-                <div key={id} className="Catalogue__item col-sm-12 col-md-6 col-lg-4 text-dark">
+                <div key={id} className="Catalogue__item col-sm-12 col-md-6 col-lg-4 text-dark mt-4">
                   <div className="details_List">
                     {image === null ? <div className="no-image">No Image</div> : <Img sizes={image.fluid} />}
                     <div className="details_inner">
