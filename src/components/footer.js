@@ -31,7 +31,7 @@ class Footer extends Component {
                         <div className="footer-bottom social-right-menu mt-3">
                         <SocialIcons />
                             <div className="site-info">
-                                © {new Date().getFullYear()} DanielJS. All rights reserved.
+                                © {new Date().getFullYear()} DanielJS Digital Media Solutions.<br /> All rights reserved.
                             </div>
                         </div>
                     </div>
