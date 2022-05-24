@@ -1,8 +1,35 @@
 import React, { useState } from 'react';
-import { navigate } from 'gatsby';
-import SEO from '../src/components/seo';
+import { navigate, graphql } from 'gatsby';
+import Img from 'gatsby-image';
+import SEO from '../components/seo';
 
-function WorkRequest({ location }) {
+
+function IndexPost ({ services }) {
+    return (
+        <React.Fragment>
+          <div className="row product-main">
+            {services.edges.sort((a, b) => b.node.title - a.node.title).map(({ node: { id, title, description, image }}) => {
+              return (
+                <div key={id} className="Catalogue__item col-sm-12 col-md-6 col-lg-4 text-dark">
+                  <div className="details_List">
+                    {image === null ? <div className="no-image">No Image</div> : <Img sizes={image.fluid} />}
+                    <div className="details_inner">
+                      <h2>
+                          {title}
+                      </h2>
+                      <p dangerouslySetInnerHTML={{__html: description.childMarkdownRemark.html }}/>
+                      </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </React.Fragment>
+    );
+  }
+
+function WorkRequest({ location, data: { allContentfulService }}) {
+
     const [state, setState] = useState(resetState());
 
     const encode = (data) => {
@@ -46,7 +73,13 @@ function WorkRequest({ location }) {
             <SEO title="Request for Web Development" description="Need a new website or updates to an existing site? I would love to dicuss how we can optimize your web presence" />
             <div className="Contact-us mt-5 Page">
                 <div className="container">
-                    <h1>Proposal Request</h1>
+                <div className="Blog-section mt-5">
+                    <div className="pt-5">
+                        <h1>Services</h1>
+                        <IndexPost services={allContentfulService} />
+                        </div>
+                    </div>
+                    <h2>Request a Proposal</h2>
                     <p>Need a new website or updates to an existing site? I would love to dicuss how we can optimize your web presence.</p>
                     {state.formSubmitted ? <p>Thank you for contacting me!</p> :
                         <form className="mt-5" name="Work Request" data-netlify="true" onSubmit={handleSubmit}>
@@ -81,5 +114,33 @@ function WorkRequest({ location }) {
         </>
     );
 }
+
+export const query = graphql`
+    query ServicesQuery {
+        allContentfulService {
+            edges {
+                node {
+                    id
+                    title
+                    description {
+                        childMarkdownRemark {
+                            html
+                        }
+                    }
+                    image {
+                        fluid(maxWidth: 1000) {
+                        base64
+                        aspectRatio
+                        src
+                        srcSet
+                        srcWebp
+                        srcSetWebp
+                        sizes
+                    }
+                }
+            }
+        }
+    }
+}`
 
 export default WorkRequest;
