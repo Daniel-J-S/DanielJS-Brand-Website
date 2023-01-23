@@ -2,14 +2,14 @@ import React from "react"
 import Img from "gatsby-image"
 import { DiscussionEmbed } from "disqus-react";
 
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import { graphql } from "gatsby";
 
 const disqusShortname = "danieljs";
 
 const ArticleDetails = ({ data: { contentfulArticle } }) => (
     <>
-        <SEO
+        <Seo
             title={contentfulArticle.title}
             keywords={contentfulArticle.keywords.map(k => k.identifier)}
             description={contentfulArticle.description}

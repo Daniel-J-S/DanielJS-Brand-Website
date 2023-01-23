@@ -6,7 +6,7 @@ import Img from 'gatsby-image';
 function Hello({ data }) {
     return (
         <>
-            <SEO title="Hello" description="I am a self-motivated, hard-working, full-stack developer and educator with a strong passion for innovation and technology." />
+            <Seo title="Hello" description="I am a self-motivated, hard-working, full-stack developer and educator with a strong passion for innovation and technology." />
             <div style={{ maxWidth: '850px' }} className="Page container">
                 <div className="video-wrapper mt-5">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/N8BhbtIa0as" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>

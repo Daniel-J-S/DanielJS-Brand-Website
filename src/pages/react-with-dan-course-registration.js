@@ -1,5 +1,5 @@
 import React from 'react';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 
@@ -7,7 +7,7 @@ const ReactWithDanCourseRegistration = ({ location, data: { course } }) => {
   
   return (
     <>
-      <SEO 
+      <Seo 
         title="React With Dan Course Registration" 
         keywords={[`React With Dan Course Registration`, `Courses`, `Training`]} 
         description="Check out my latest live classes available for purchase"

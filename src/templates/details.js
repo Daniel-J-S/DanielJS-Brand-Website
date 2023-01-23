@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { graphql } from 'gatsby';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 
 const ProductDetails = data => {
   const [selectState, setSelectState] = useState({
@@ -19,7 +19,7 @@ const ProductDetails = data => {
 
   return (
     <>
-      <SEO title={data.data.contentfulProduct.name} keywords={[`gatsby`, `application`, `react`]} />
+      <Seo title={data.data.contentfulProduct.name} keywords={[`gatsby`, `application`, `react`]} />
       <div className="container details-page Page">
         <div className="product-details">
           <div className="Product-Screenshot">

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 import { graphql } from 'gatsby';
 
 class ArticlePost extends React.Component {
@@ -70,7 +70,7 @@ class ArticlePost extends React.Component {
 
 const Articles = data => (
   <>
-    <SEO
+    <Seo
       title="Articles"
       keywords={[`gatsby`, `articles`, `react`]}
       location={data.location}

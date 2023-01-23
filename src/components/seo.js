@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import ogImage from '../images/og-image.png';
 
-function SEO({ description, lang, meta, keywords, title, location, featuredImage }) {
+function Seo({ description, lang, meta, keywords, title, location, featuredImage }) {
 
   const { site } = useStaticQuery(
     graphql`
@@ -80,14 +80,14 @@ function SEO({ description, lang, meta, keywords, title, location, featuredImage
   )
 }
 
-SEO.defaultProps = {
+Seo.defaultProps = {
   lang: `en`,
   meta: [],
   keywords: [],
   description: ``,
 }
 
-SEO.propTypes = {
+Seo.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
@@ -95,4 +95,4 @@ SEO.propTypes = {
   title: PropTypes.string.isRequired,
 }
 
-export default SEO;
+export default Seo;

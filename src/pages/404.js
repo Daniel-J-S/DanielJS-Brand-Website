@@ -1,9 +1,9 @@
 import React from "react"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 const NotFoundPage = ({ location }) => (
   <>
-    <SEO 
+    <Seo 
       description="You've requested a page that doesn't exist" 
       title="404: Not found" 
       keywords={[`Not Found`, `404`, `Whoops`]}

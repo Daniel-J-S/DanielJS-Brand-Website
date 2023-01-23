@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 import Posts from '../components/posts';
 import algorithmChallengeVideos from '../data/algorithm-challenge-videos.json';
 
@@ -28,7 +28,7 @@ function Videos({ location }) {
     };
     return(
         <>
-        <SEO title="My Videos" description="Check out my latest videos where I demonstrate how to solve FreeCodeCamp's Algorithm Challenges"/>
+        <Seo title="My Videos" description="Check out my latest videos where I demonstrate how to solve FreeCodeCamp's Algorithm Challenges"/>
             <div className="Blog-section Page">
                 <Posts isSmallScreen={isSmallScreen} data={algorithmChallengeVideos} title="My Videos" />
             </div>
