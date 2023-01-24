@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { navigate, graphql } from 'gatsby';
 import Seo from '../components/seo';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 
 function IndexPost ({ services }) {
@@ -8,10 +9,22 @@ function IndexPost ({ services }) {
         <React.Fragment>
           <div className="row product-main">
             {services.edges.sort((a, b) => a.node.ranking - b.node.ranking).map(({ node: { id, title, description, image }}) => {
+            const imageAsset = getImage(image);
               return (
                 <div key={id} className="Catalogue__item col-sm-12 col-md-6 col-lg-4 text-dark mt-4">
                   <div className="details_List no-hover border-dark rounded">
-                    {/* {image === null ? <div className="no-image">No Image</div> : <Img className="border-bottom border-dark" sizes={image.fluid} />} */}
+                    {
+                        image === null 
+                        ? <div 
+                            className="no-image">
+                                No Image
+                          </div> 
+                        : <GatsbyImage 
+                            className="border-bottom border-dark" 
+                            image={imageAsset} 
+                            alt={title}
+                           />
+                    }
                     <div className="details_inner">
                       <h2>
                           {title}
@@ -27,7 +40,7 @@ function IndexPost ({ services }) {
     );
   }
 
-function WorkRequest({ location, data: { allContentfulService }}) {
+function WorkRequest({ data: { allContentfulService }}) {
 
     const [state, setState] = useState(resetState());
 
@@ -117,21 +130,24 @@ function WorkRequest({ location, data: { allContentfulService }}) {
 }
 
 export const query = graphql`
-    query ServicesQuery {
-        allContentfulService {
-            edges {
-                node {
-                    id
-                    title
-                    ranking
-                    description {
-                        childMarkdownRemark {
-                            html
-                        }
+query ServicesQuery {
+    allContentfulService {
+        edges {
+            node {
+                id
+                title
+                ranking
+                description {
+                    childMarkdownRemark {
+                        html
                     }
+                }
+                image {
+                    gatsbyImageData(width: 5000)
+                }
             }
         }
     }
-}`
+}`;
 
 export default WorkRequest;
