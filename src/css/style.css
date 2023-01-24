@@ -1407,7 +1407,7 @@ a.header-logo img {
       width: 100%
   }
 
-  .nav a,span.nav-link {
+  .nav a, span.nav-link {
       position: relative;
       display: block;
       padding: 1.2rem 0;
@@ -1416,7 +1416,7 @@ a.header-logo img {
       width: 100%
   }
 
-  .nav span.nav-link,a.nav-link:not(.nav a.nav-link:nth-child(1)) {
+  .nav span.nav-link, a.nav-link:not(.nav a.nav-link:nth-child(1)) {
       border-top: .1rem solid gray
   }
 
@@ -1697,4 +1697,10 @@ a.header-logo img {
 .no-hover {
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
+}
+
+
+span.nav-link {
+  color: #000;
+  font-weight: 700;
 }
