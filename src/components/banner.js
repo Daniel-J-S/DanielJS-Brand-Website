@@ -1,65 +1,68 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-var settings = {
-  dots: true,
-  speed: 500,
-  infinite: true,
-  autoplay: true,
-  autoplaySpeed: 3000,
-  slidesToShow: 1,
-  slidesToScroll: 0
-};
-
-
+// TODO: Remove Slider
 
 export default class Banner extends Component {
 
-    state = {
-      subHeadingSection: 0
-    }
+  state = {
+    subHeadingSection: 0
+  }
 
 
-    subHeadings = {
-      0: 'I TEACH CAREER CHANGERS HOW TO CODE',
-      1: 'I BUILD HIGH QUALITY WEBSITES FOR BUSINESSES.',
-      2: 'I COACH AND MENTOR SOFTWARE DEVELOPERS.',
-    }
+  subHeadings = {
+    0: 'I TEACH CAREER CHANGERS HOW TO CODE',
+    1: 'I BUILD HIGH QUALITY WEBSITES FOR BUSINESSES.',
+    2: 'I COACH AND MENTOR SOFTWARE DEVELOPERS.',
+  }
 
-    timerId = null
+  settings = {
+    dots: true,
+    speed: 500,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    slidesToShow: 1,
+    slidesToScroll: 0
+  }
 
-  
-    componentDidMount() {
-      this.timerId = setInterval(() => {
-        this.setState(prevState => ({
-          subHeadingSection: ++prevState.subHeadingSection % 3
-        }));
-      }, 3500);
-    }
+  timerId = null
 
-    componentWillUnmount() {
-      clearInterval(this.timerId);
-    }
 
-    render() {
+  componentDidMount() {
+    this.timerId = setInterval(() => {
+      this.setState(prevState => ({
+        subHeadingSection: ++prevState.subHeadingSection % 3
+      }));
+    }, 3500);
+  }
 
-    const { BannerData } = this.props;
+  componentWillUnmount() {
+    clearInterval(this.timerId);
+  }
+
+  render() {
+
+      const {
+        bannerData
+      } = this.props;
+      const image = getImage(bannerData.image);
 
     return (
       <div className="slider-section">
-        <Slider {...settings}>
-          {BannerData.map((items, i) => (
-            <div key={i} className="item">
-              <div className="site-Banner">
-                <div className="Banner-details">
-                    <h1>{items.node.title}</h1>
-                  <div>
-                    <span key={this.state.subHeadingSection} className="sub-title">{this.subHeadings[this.state.subHeadingSection]}</span>
-                  </div>
+        <Slider {...this.settings}>
+          <div className="item">
+            <div className="site-Banner">
+              <GatsbyImage image={image} alt={bannerData.title}/>
+              <div className="Banner-details">
+                  <h1>{bannerData.title}</h1>
+                <div>
+                  <span key={this.state.subHeadingSection} className="sub-title">{this.subHeadings[this.state.subHeadingSection]}</span>
                 </div>
               </div>
             </div>
-          ))}
+          </div>
         </Slider>
       </div>
     );
