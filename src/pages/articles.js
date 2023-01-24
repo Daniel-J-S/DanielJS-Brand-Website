@@ -42,7 +42,7 @@ class ArticlePost extends Component {
             const authorImage = getImage(node.author.photo);
             
             return (
-              <li>
+              <li key={node.id}>
                 <div className="post-item template-square columned">
                   <div className="post-thumbnail">
                   <GatsbyImage image={featureImage} alt={node.title} />
