@@ -75,7 +75,7 @@ export default IndexPage
 
 export const query = graphql`
 query AboutQuery {
-  allContentfulProduct(limit: 6, sort: {createdAt: DESC}) {
+  allContentfulProduct(limit: 6, sort: {createdAt: ASC}) {
     edges {
       node {
         id
@@ -104,14 +104,24 @@ query AboutQuery {
     title
     date(formatString: "D MMMM, YYYY")
   }
-  allContentfulArticle(limit: 3, sort: {createdAt: DESC}) {
+  allContentfulArticle(
+      limit: 3
+      sort: {createdAt: DESC}
+      filter: {isFeatured: {eq: true}}
+    ) {
     edges {
       node {
         id
         title
         slug
+        featureImage {
+          gatsbyImageData(width: 900)
+        }
         author {
           name
+          photo {
+            gatsbyImageData(width: 500)
+          }
         }
         body {
           childMarkdownRemark {
