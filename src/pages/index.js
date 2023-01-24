@@ -7,7 +7,7 @@ import SocialIcons from '../components/social-icons';
 import { graphql } from 'gatsby';
 import bio from '../data/bio.json';
 
-const IndexPage = ({ data: { allContentfulHeaderBanner, allContentfulArticle }, location }) => {
+const IndexPage = ({ data: { contentfulHeaderBanner, allContentfulArticle }, location }) => {
   const [bioLength, setBioLength] = useState(3);
 
   const [show, setShow] = useState(true)
@@ -28,7 +28,7 @@ const IndexPage = ({ data: { allContentfulHeaderBanner, allContentfulArticle }, 
         description={"Daniel has had a lifetime passion for web development. At the peak of his last career in finance, Daniel realized he wanted to develop software full-time, so he resigned from his job to open a Web Development Studio."}
         location={location}
       />
-      <Banner BannerData={allContentfulHeaderBanner.edges} />
+      <Banner bannerData={contentfulHeaderBanner} />
       <div className="container HomePage">
         <div className="text-center">
           <div className="with-underline p-3 mb-5 text-center">
@@ -94,12 +94,10 @@ query AboutQuery {
       }
     }
   }
-  allContentfulHeaderBanner {
-    edges {
-      node {
-        title
-        subHeading
-      }
+  contentfulHeaderBanner(title: {eq: "DanielJS"}) {
+    title
+    image {
+      gatsbyImageData(width: 1200)
     }
   }
   contentfulDealCountDown {
