@@ -1,16 +1,17 @@
-
-   
 /* consoleimg v1.0 - chris johnson / @defaced */
 export const consoleimg = (function () {
-    if(typeof window !== "undefined") {
+  if (typeof window !== "undefined") {
     return {
-      load: function (i, { size: s = 320, color: c = 'transparent' } = {}) {
+      load: function (i, {
+        size: s = 320,
+        color: c = 'transparent'
+      } = {}) {
         const r = new FileReader()
         r.addEventListener('load', function () {
           /* Format the CSS string for console.log */
           const o = 'background: url(\'' + r.result + '\') left top no-repeat; font-size: ' + s + 'px; background-size: contain; background-color:' + c
           /* Output to the console. */
-          
+
           console.log('%c     ', o)
           console.log(`%c
   Hey there, you opened the console 🥰
@@ -21,7 +22,7 @@ export const consoleimg = (function () {
   `, 'color: #663399; font-size: 1.5rem; font-weight: bold; font-family: Helvetica;');
         }, false)
         fetch(i)
-        /* Return the data as a blob. */
+          /* Return the data as a blob. */
           .then(r => r.blob())
           .then(b => {
             /* Only proceed if the blob is an image. */
@@ -40,7 +41,8 @@ export const consoleimg = (function () {
           .then(i => r.readAsDataURL(i))
           .catch(e => console.warn(e.message))
       }
-    }} else {
-      return null;
     }
-  })()
+  } else {
+    return null;
+  }
+})()
