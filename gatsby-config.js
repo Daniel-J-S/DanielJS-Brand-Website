@@ -10,6 +10,7 @@ module.exports = {
     author: `DanielJS`,
   },
   plugins: [
+    `gatsby-plugin-image`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-smoothscroll`,
     {
@@ -52,14 +53,14 @@ module.exports = {
         accessToken
       }
     },
-    {
-      resolve: "gatsby-plugin-snipcartv3",
-      options: {
-        apiKey: snipcart,
-        autopop: true,
-        language: null,
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-snipcartv3",
+    //   options: {
+    //     apiKey: snipcart,
+    //     autopop: true,
+    //     language: null,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-offline`,
       options: {

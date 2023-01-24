@@ -3,19 +3,10 @@ const path = require('path');
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
   return new Promise((resolve, reject) => {
-    const StoreTemplate = path.resolve('./src/templates/details.js');
     const ArticleTemplate = path.resolve('./src/templates/articleDetails.js');
     resolve(
       graphql(`
         {
-          allContentfulProduct{
-            edges{
-              node{
-                id
-                slug
-              }
-            }
-          }
           allContentfulArticle {
             edges {
               node {
@@ -29,15 +20,6 @@ exports.createPages = ({ graphql, actions }) => {
         if (result.errors) {
           reject(result.errors);
         }
-        result.data.allContentfulProduct.edges.forEach(edge => {
-          createPage({
-            path: edge.node.slug,
-            component: StoreTemplate,
-            context: {
-              slug: edge.node.slug,
-            },
-          })
-        });
         result.data.allContentfulArticle.edges.forEach(data => {
           createPage({
             path: data.node.slug,

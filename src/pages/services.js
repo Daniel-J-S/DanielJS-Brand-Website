@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { navigate, graphql } from 'gatsby';
-import Img from 'gatsby-image';
 import Seo from '../components/seo';
 
 
@@ -12,7 +11,7 @@ function IndexPost ({ services }) {
               return (
                 <div key={id} className="Catalogue__item col-sm-12 col-md-6 col-lg-4 text-dark mt-4">
                   <div className="details_List no-hover border-dark rounded">
-                    {image === null ? <div className="no-image">No Image</div> : <Img className="border-bottom border-dark" sizes={image.fluid} />}
+                    {/* {image === null ? <div className="no-image">No Image</div> : <Img className="border-bottom border-dark" sizes={image.fluid} />} */}
                     <div className="details_inner">
                       <h2>
                           {title}
@@ -130,17 +129,6 @@ export const query = graphql`
                             html
                         }
                     }
-                    image {
-                        fluid(maxWidth: 1000) {
-                        base64
-                        aspectRatio
-                        src
-                        srcSet
-                        srcWebp
-                        srcSetWebp
-                        sizes
-                    }
-                }
             }
         }
     }

@@ -1,14 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Seo from '../components/seo';
-import Img from 'gatsby-image';
 
 function Resume({ data }) {
     return (
         <>
             <Seo title="My Resume" description="I am a self-motivated, hard-working, full-stack developer and educator with a strong passion for innovation and technology." />
             <div style={{ maxWidth: '850px' }} className="Page container">
-                <h2 style={{ display: 'flex', alignItems: 'center' }}>{data.contentfulResume.title} <Img style={{ height: '4rem', width: '4rem', marginLeft: '1rem' }} className="rounded-circle img-fluid" sizes={data.contentfulResume.author.photo.sizes} /></h2>
+                <h2 style={{ display: 'flex', alignItems: 'center' }}>{data.contentfulResume.title}</h2>
                 <p>
                     <small><strong>Last Updated: {data.contentfulResume.updatedAt}</strong></small>
                 </p>
@@ -36,19 +35,7 @@ export const query = graphql`
         }
         author {
             name
-            photo {
-              sizes {
-                aspectRatio
-                base64
-                sizes
-                src
-                srcSet
-                srcSetWebp
-                srcWebp
-                
-              }
-            }
-          }
+        }
         title
         resumePdf {
             file {

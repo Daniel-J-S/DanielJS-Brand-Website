@@ -1,5 +1,4 @@
 import React from "react"
-import Img from "gatsby-image"
 import { DiscussionEmbed } from "disqus-react";
 
 import Seo from "../components/seo"
@@ -13,11 +12,10 @@ const ArticleDetails = ({ data: { contentfulArticle } }) => (
             title={contentfulArticle.title}
             keywords={contentfulArticle.keywords.map(k => k.identifier)}
             description={contentfulArticle.description}
-            featuredImage={contentfulArticle.author.photo.fixed.src}
         />
         <div className="articles-page">
             <div className="post-thumbnail">
-                <Img sizes={contentfulArticle.featureImage.fluid} />
+
             </div>
             <div className="container">
                 <div className="post-details">
@@ -28,7 +26,6 @@ const ArticleDetails = ({ data: { contentfulArticle } }) => (
                     </div>
                     <p><small className="text-muted">Time to read: {contentfulArticle.body.childMarkdownRemark.timeToRead} mins</small></p>
                     <div className="author">
-                        <Img sizes={contentfulArticle.author.photo.fixed} />
                         <strong className="name">{contentfulArticle.author.name}</strong>
                     </div>
                     <div
@@ -68,31 +65,12 @@ export const query = graphql`
             publicData(formatString: "MMMM D, YYYY")
             author {
             name
-            photo {
-                fixed(width: 50, height: 50) {
-                width
-                height
-                src
-                srcSet
-                }
-            }
             }
             body {
                 childMarkdownRemark {
                     html
                     timeToRead
                 }
-            }
-            featureImage {
-                fluid {
-                    base64
-                    aspectRatio
-                    src
-                    srcSet
-                    srcWebp
-                    srcSetWebp
-                    sizes
-                  }
             }
         }
     }

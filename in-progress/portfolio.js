@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Seo from '../components/seo';
-import Img from 'gatsby-image'; 
 
 function Portfolio({ data }) {
     return (

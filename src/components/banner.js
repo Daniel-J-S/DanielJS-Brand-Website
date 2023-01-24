@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
-import Img from 'gatsby-image';
 
 var settings = {
   dots: true,
@@ -52,7 +51,6 @@ export default class Banner extends Component {
           {BannerData.map((items, i) => (
             <div key={i} className="item">
               <div className="site-Banner">
-                <Img sizes={items.node.image.fluid} />
                 <div className="Banner-details">
                     <h1>{items.node.title}</h1>
                   <div>

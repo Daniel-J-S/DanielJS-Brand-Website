@@ -1,6 +1,5 @@
 import React from 'react';
 import Seo from '../components/seo';
-import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 
 const ReactWithDanCourseRegistration = ({ location, data: { course } }) => {    
@@ -17,7 +16,6 @@ const ReactWithDanCourseRegistration = ({ location, data: { course } }) => {
         <div className="product-details pt-5">
           <div className="row ml-0 mr-0">
           <div className="col-md-6 text-center text-md-left">
-              <Img className="ml-0 mr-0 mt-0 mb-0" {...course.image} />
             </div>
             <div className="col-md-6 heading-section">
               <h2>"{course.name}" Course <small><i>(Currently Not Accepting Enrollees)</i></small></h2> 
@@ -26,7 +24,6 @@ const ReactWithDanCourseRegistration = ({ location, data: { course } }) => {
               <button
                   className="Product snipcart-add-item mt-2 mb-5"
                   data-item-id={`/react-with-dan-course-registration`}
-                  data-item-image={course.image.fixed.src}
                   data-item-price={course.price}
                   data-item-name={`React With Dan`}
                   data-item-url={`/react-with-dan-course-registration`}
@@ -63,14 +60,6 @@ query ReactWithDanCourseRegistrationQuery {
     price
     rating
     slug
-    image {
-      fixed(width: 250, height: 250) {
-      width
-      height
-      src
-      srcSet
-      }
-    }
     details {
       childMarkdownRemark {
         html

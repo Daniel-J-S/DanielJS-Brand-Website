@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import SEO from '../src/components/seo';
-import Img from 'gatsby-image';
 
 function Hello({ data }) {
     return (

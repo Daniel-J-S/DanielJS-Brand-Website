@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
 import Seo from '../components/seo';
 import { graphql } from 'gatsby';
 
@@ -44,7 +43,6 @@ class ArticlePost extends React.Component {
             <li>
               <div className="post-item template-square columned">
                 <div className="post-thumbnail">
-                  <Img sizes={items.node.featureImage.fluid} />
                   <div className="post-date">
                     <i className="fas fa-calendar-alt"></i>
                     {items.node.publicData}
@@ -53,7 +51,6 @@ class ArticlePost extends React.Component {
                 <div className="post-details">
                   <h2 className="post-title"><Link to={`/${items.node.slug}`}>{items.node.title}</Link></h2>
                   <div className="author">
-                    <Img sizes={items.node.author.photo.fluid} />
                     <strong className="name">{items.node.author.name}</strong>
                   </div>
                   <p><small className="text-muted">Time to read: {items.node.body.childMarkdownRemark.timeToRead} mins</small></p>
@@ -94,33 +91,11 @@ export const query = graphql`
             publicData(formatString: "MMMM D, YYYY")
             author {
               name
-              photo {
-                fluid(maxWidth: 350) {
-                  base64
-                  aspectRatio
-                  src
-                  srcSet
-                  srcWebp
-                  srcSetWebp
-                  sizes
-                }
-              }
             }
             body {
               childMarkdownRemark {
                 excerpt(pruneLength: 250)
                 timeToRead  
-              }
-            }
-            featureImage {
-              fluid(maxWidth: 1120) {
-                base64
-                aspectRatio
-                src
-                srcSet
-                srcWebp
-                srcSetWebp
-                sizes
               }
             }
           }

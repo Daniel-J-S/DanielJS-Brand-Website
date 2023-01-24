@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { graphql } from 'gatsby';
-import Seo from '../components/seo';
+import Seo from '../src/components/seo';
 
 const ProductDetails = data => {
   const [selectState, setSelectState] = useState({
@@ -27,12 +27,12 @@ const ProductDetails = data => {
               <Tabs>
                 {data.data.contentfulProduct.productMorePhotos.map(items => (
                   <TabPanel key={items.id}>
-                    <Tab><img src={items.fixed.src} alt={items.id}/></Tab>
+                    {/* <Tab><img src={items.fixed.src} alt={items.id}/></Tab> */}
                   </TabPanel>
                 ))}
                 <TabList>
                   {data.data.contentfulProduct.productMorePhotos.map(items => (
-                    <Tab key={items.id}><img src={items.fixed.src} alt={items.id}/></Tab>
+                    {/* <Tab><img src={items.fixed.src} alt={items.id}/></Tab> */}
                   ))}
                 </TabList>
               </Tabs>}
@@ -61,7 +61,7 @@ const ProductDetails = data => {
                   style={{opacity: showSizeSelection? !selectState.userSelection ? .5: 1 : 1}}
                   className="Product snipcart-add-item btn btn-dark"
                   data-item-id={data.data.contentfulProduct.slug}
-                  data-item-image={data.data.contentfulProduct.image === null ? "" : data.data.contentfulProduct.image.fixed.src}
+                  // data-item-image={data.data.contentfulProduct.image === null ? "" : data.data.contentfulProduct.image.fixed.src}
                   data-item-price={data.data.contentfulProduct.price}
                   data-item-custom1-name={showSizeSelection ? 'Size': null}
                   data-item-custom1-options={showSizeSelection || null || selectState.userSelection ? selectState.value + '|' + sizes.split('|').filter(s => s !== selectState.value).join('|') : sizes}
@@ -98,13 +98,7 @@ export const query = graphql`
       sizes {
         size
       }
-      image {
-        fixed(width: 1120, height: 500) {
-        width
-        height
-        src
-        srcSet
-      }
+
     }
     price
       details {
@@ -112,12 +106,5 @@ export const query = graphql`
         html
       }
     }
-    productMorePhotos {
-      id
-      fixed(width: 1120, height: 600){
-        src
-      }
-    }
     rating
-  }
-}`;
+  }`;

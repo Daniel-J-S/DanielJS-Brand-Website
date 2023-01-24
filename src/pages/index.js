@@ -7,7 +7,7 @@ import SocialIcons from '../components/social-icons';
 import { graphql } from 'gatsby';
 import bio from '../data/bio.json';
 
-const IndexPage = ({ data: { allContentfulHeaderBanner, allContentfulProduct, allContentfulArticle }, location }) => {
+const IndexPage = ({ data: { allContentfulHeaderBanner, allContentfulArticle }, location }) => {
   const [bioLength, setBioLength] = useState(3);
 
   const [show, setShow] = useState(true)
@@ -61,12 +61,6 @@ const IndexPage = ({ data: { allContentfulHeaderBanner, allContentfulProduct, al
           <ArticlePost allContentfulArticle={allContentfulArticle} numPosts={3} />
         </div>
       </div>
-      {/* <div className="Blog-section mt-5">
-        <div className="container pt-5">
-          <h3>Swag Shop</h3>
-          <IndexPost allContentfulProduct={allContentfulProduct} />
-        </div>
-      </div> */}
       <div className="Contact-us mt-5" id="contact">
         <div className="container mt-3">
           <h3 className="mt-5 pt-5">Contact Me</h3>
@@ -80,110 +74,55 @@ const IndexPage = ({ data: { allContentfulHeaderBanner, allContentfulProduct, al
 export default IndexPage
 
 export const query = graphql`
-  query AboutQuery {
-    allContentfulProduct(limit: 6,sort:{fields:createdAt,order: DESC}){
-      edges{
-        node{
-          id
-          name
-          slug
-          rating
-          sizes {
-            size
-          }
-          image {
-            fluid(maxWidth: 1000) {
-              base64
-              aspectRatio
-              src
-              srcSet
-              srcWebp
-              srcSetWebp
-              sizes
-            }
-          }
-          price
-          details {
-            childMarkdownRemark {
-              excerpt(pruneLength: 140)
-            }
-          }
+query AboutQuery {
+  allContentfulProduct(limit: 6, sort: {createdAt: DESC}) {
+    edges {
+      node {
+        id
+        name
+        slug
+        rating
+        sizes {
+          size
         }
-      }
-    }
-    allContentfulHeaderBanner {
-      edges {
-        node {
-          title
-          subHeading
-          image {
-            fluid(maxWidth: 1800) {
-              base64
-              aspectRatio
-              src
-              srcSet
-              srcWebp
-              srcSetWebp
-              sizes
-            }
-          }
-        }
-      }
-    }
-    contentfulDealCountDown {
-      title
-      featureImage {
-        fluid(maxWidth: 1800) {
-          base64
-          aspectRatio
-          src
-          srcSet
-          srcWebp
-          srcSetWebp
-          sizes
-        }
-      }
-      date(formatString: "D MMMM, YYYY")
-    }
-    allContentfulArticle(limit: 3,sort:{fields:createdAt,order: DESC}) {
-      edges {
-        node {
-          id
-          title
-          slug
-          author {
-            name
-            photo {
-              fluid(maxWidth: 350) {
-                base64
-                aspectRatio
-                src
-                srcSet
-                srcWebp
-                srcSetWebp
-                sizes
-              }
-            }
-          }
-          body {
-            childMarkdownRemark {
-              excerpt(pruneLength: 250)
-              timeToRead  
-            }
-          }
-          featureImage {
-            fluid(maxWidth: 1120) {
-              base64
-              aspectRatio
-              src
-              srcSet
-              srcWebp
-              srcSetWebp
-              sizes
-            }
+        price
+        details {
+          childMarkdownRemark {
+            excerpt(pruneLength: 140)
           }
         }
       }
     }
   }
+  allContentfulHeaderBanner {
+    edges {
+      node {
+        title
+        subHeading
+      }
+    }
+  }
+  contentfulDealCountDown {
+    title
+    date(formatString: "D MMMM, YYYY")
+  }
+  allContentfulArticle(limit: 3, sort: {createdAt: DESC}) {
+    edges {
+      node {
+        id
+        title
+        slug
+        author {
+          name
+        }
+        body {
+          childMarkdownRemark {
+            excerpt(pruneLength: 250)
+            timeToRead
+          }
+        }
+      }
+    }
+  }
+}
 `
