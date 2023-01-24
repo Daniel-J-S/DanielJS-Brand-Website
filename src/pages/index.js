@@ -7,10 +7,37 @@ import SocialIcons from '../components/social-icons';
 import { graphql } from 'gatsby';
 import bio from '../data/bio.json';
 
+const Button = ({ toggle, bioLength, index, label, handleClick}) => {
+  return (
+    <button 
+    onMouseDown={toggle} 
+    onMouseUp={toggle} 
+    className={`btn btn-sm btn-${bioLength === index ? 'dark' : 'outline-dark'} ms-2`} 
+    onClick={() => handleClick(index)}>
+      {label}
+  </button>
+  );
+};
+
+const buttonData = [
+  {
+    index: 1, 
+    label: 'Short'
+  },
+  {
+    index: 2, 
+    label: 'Medium'
+  },
+  {
+    index: 3, 
+    label: 'Long'
+  },
+];
+
 const IndexPage = ({ data: { contentfulHeaderBanner, allContentfulArticle }, location }) => {
   const [bioLength, setBioLength] = useState(3);
 
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(true);
 
   function handleClick(value) {
     setBioLength(value);
@@ -34,9 +61,16 @@ const IndexPage = ({ data: { contentfulHeaderBanner, allContentfulArticle }, loc
           <div className="with-underline p-3 mb-5 text-center">
             <small>Set Bio Length</small>
             <div className="mt-3">
-              <button onMouseDown={toggle} onMouseUp={toggle} className={`btn btn-sm btn-${bioLength === 1 ? 'dark' : 'outline-dark'} ml-4`} onClick={() => handleClick(1)}>Short</button>
-              <button onMouseDown={toggle} onMouseUp={toggle} className={`btn btn-sm btn-${bioLength === 2 ? 'dark' : 'outline-dark'} ml-4`} onClick={() => handleClick(2)}>Medium</button>
-              <button onMouseDown={toggle} onMouseUp={toggle} className={`btn btn-sm btn-${bioLength === 3 ? 'dark' : 'outline-dark'} ml-4`} onClick={() => handleClick(3)}>Long</button>
+              {buttonData.map(({ index, label }) => (
+                <Button 
+                  key={index} 
+                  index={index} 
+                  label={label} 
+                  toggle={toggle}
+                  bioLength={bioLength} 
+                  handleClick={handleClick} 
+                />
+              ))}
             </div>
           </div>
           <div className="bio">
@@ -74,35 +108,12 @@ const IndexPage = ({ data: { contentfulHeaderBanner, allContentfulArticle }, loc
 export default IndexPage
 
 export const query = graphql`
-query AboutQuery {
-  allContentfulProduct(limit: 6, sort: {createdAt: ASC}) {
-    edges {
-      node {
-        id
-        name
-        slug
-        rating
-        sizes {
-          size
-        }
-        price
-        details {
-          childMarkdownRemark {
-            excerpt(pruneLength: 140)
-          }
-        }
-      }
-    }
-  }
+query IndexQuery {
   contentfulHeaderBanner(title: {eq: "DanielJS"}) {
     title
     image {
       gatsbyImageData(width: 1200)
     }
-  }
-  contentfulDealCountDown {
-    title
-    date(formatString: "D MMMM, YYYY")
   }
   allContentfulArticle(
       limit: 3
@@ -132,5 +143,4 @@ query AboutQuery {
       }
     }
   }
-}
-`
+}`;
