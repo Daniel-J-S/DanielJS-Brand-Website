@@ -84,11 +84,10 @@ const IndexPage = ({ data: { contentfulHeaderBanner, allContentfulArticle }, loc
           <h3 className="mt-5">Connect With Daniel</h3>
           <SocialIcons />
           <div className="video-wrapper mt-5">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/N8BhbtIa0as" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/AjE9NwjhWlY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
           </div>
         </div>
       </div>
-
       <div className="Blog-section mt-5">
         <div className="container pt-5">
           <h3>Recent Articles</h3>
