@@ -109,7 +109,7 @@ function WorkRequest({ data: { allContentfulService }}) {
                             </div>
                             <div>
                                 <label>Your Business Name: 
-                                <input placeholder="ACME" type="text" name="businessName" required value={state.businessName}  onChange={handleChange}/></label>
+                                <input placeholder="ACME INC" type="text" name="businessName" required value={state.businessName}  onChange={handleChange}/></label>
                             </div>
                             <div>
                                 <label>Your Current Business Website URL: 
