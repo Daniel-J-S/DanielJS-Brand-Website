@@ -83,11 +83,13 @@ function WorkRequest({ data: { allContentfulService }}) {
     return (
         <>
             <Seo title="Request for Web Development" description="Need a new website or updates to an existing site? I would love to dicuss how we can optimize your web presence" />
-            <div className="Contact-us mt-5 Page">
+            <div className="Contact-us mt-1 Page">
                 <div className="container">
-                    <div className="Blog-section mt-5">
+                    <div className="Blog-section mt-3">
                         <div className="pt-5">
-                            <h1>Need help with Your Website, Web Application, Desktop Application or Other Software Solution?</h1>
+                            <h1>Daniel JS Digital Media Solutions</h1>
+                            <h4>Do you need help with Your Website, Web Application, Desktop Application or Other Software Solution?</h4>
+
                             <IndexPost services={allContentfulService} />
                             </div>
                         </div>
