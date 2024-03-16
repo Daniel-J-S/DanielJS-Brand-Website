@@ -29,9 +29,11 @@ function Resume({ data: {
                 <p>
                     <small><strong>Last Updated: {updatedAt}</strong></small>
                 </p>
+                {/* 
+                Removing access to this for now
                 <p>
                     <small><strong>You can also download a copy <a href={`https:${resumePdf.file.url}`} download>here</a></strong></small>
-                </p>
+                </p> */}
                 <hr />
                 <div dangerouslySetInnerHTML={{
                     __html: body.childMarkdownRemark.html
