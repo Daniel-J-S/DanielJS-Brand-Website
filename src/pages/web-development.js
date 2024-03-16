@@ -95,7 +95,7 @@ function WorkRequest({ data: { allContentfulService }}) {
                         </div>
                     <div className="container p-5">
                     <h2>Request a Proposal</h2>
-                    <p>I can make improvements to existing digital assets like these, or build new ones</p>
+                    <p>I can make improvements to existing digital assets, or build new ones</p>
                     {state.formSubmitted ? <p>Thank you for contacting me!</p> :
                         <form className="mt-5" name="Work Request" data-netlify="true" onSubmit={handleSubmit}>
                             <input type="hidden" name="form-name" value="Work Request" />
