@@ -50,10 +50,13 @@ const ResponsiveNav = ({ location, darkenBackground, setDarkenBackground }) => {
 
   const links = (
     <>
-      <Link onClick={toggleNav} activeStyle={{ margin: 0 }} activeClassName={!isSmallScreen ? 'with-underline' : ''} className="nav-link" to="/articles">Articles</Link>
+      {/*
+        Removing access to this page for now 
+        <Link onClick={toggleNav} activeStyle={{ margin: 0 }} activeClassName={!isSmallScreen ? 'with-underline' : ''} className="nav-link" to="/articles">Articles</Link> 
+      */}
       <span onKeyDown={() => handleNav('contact')} tabIndex="0" role="link" className="nav-link" onClick={() => handleNav('contact')}>Contact Me</span>
       <Link onClick={toggleNav} activeStyle={{ margin: 0 }} activeClassName={!isSmallScreen ? 'with-underline' : ''} className="nav-link" to="/resume">Resume</Link>
-      <Link onClick={toggleNav} activeStyle={{ margin: 0 }} activeClassName={!isSmallScreen ? 'with-underline' : ''} className="nav-link" to="/services">Services</Link>
+      <Link onClick={toggleNav} activeStyle={{ margin: 0 }} activeClassName={!isSmallScreen ? 'with-underline' : ''} className="nav-link" to="/web-development">Web Development</Link>
     </>
   );
 

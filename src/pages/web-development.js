@@ -87,13 +87,13 @@ function WorkRequest({ data: { allContentfulService }}) {
                 <div className="container">
                     <div className="Blog-section mt-5">
                         <div className="pt-5">
-                            <h1>Services</h1>
+                            <h1>Need help with Your Website, Web Application, Desktop Application or Other Software Solution?</h1>
                             <IndexPost services={allContentfulService} />
                             </div>
                         </div>
                     <div className="container p-5">
                     <h2>Request a Proposal</h2>
-                    <p>Need a new website or updates to an existing site? I would love to dicuss how we can optimize your web presence.</p>
+                    <p>I can make improvements to existing digital assets like these, or build new ones</p>
                     {state.formSubmitted ? <p>Thank you for contacting me!</p> :
                         <form className="mt-5" name="Work Request" data-netlify="true" onSubmit={handleSubmit}>
                             <input type="hidden" name="form-name" value="Work Request" />

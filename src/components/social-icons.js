@@ -13,11 +13,13 @@ function SocialIcons() {
                     <i className="fab fa-github"></i>
                 </a>
             </li>
+            {/* 
+            Removing this for now 
             <li>
                 <a href="https://www.youtube.com/channel/UCmPSUtVgth9zyXpzOM5lNFQ" target="_blank" rel="noopener noreferrer">
                     <i className="fab fa-youtube"></i>
                 </a>
-            </li>
+            </li> */}
         </ul>
     );
 }

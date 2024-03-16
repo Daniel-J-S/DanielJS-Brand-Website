@@ -19,7 +19,7 @@ class Footer extends Component {
                                             <span className="snipcart-customer-signin">Manage Account</span>
                                         </li> */}
                                         <li>
-                                            <Link to="/articles">Articles</Link>
+                                            <Link to="/web-development">Web Development</Link>
                                         </li>
                                         <li>
                                             <Link to="/resume">Resume</Link>

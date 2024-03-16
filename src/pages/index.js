@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Seo from '../components/seo';
 import Form from '../components/form';
 import Banner from '../components/banner';
-import ArticlePost from '../components/articlePost';
+// Removing this for now import ArticlePost from '../components/articlePost';
 import SocialIcons from '../components/social-icons';
 import { graphql } from 'gatsby';
 import bio from '../data/bio.json';
@@ -34,7 +34,7 @@ const buttonData = [
   },
 ];
 
-const IndexPage = ({ data: { contentfulHeaderBanner, allContentfulArticle }, location }) => {
+const IndexPage = ({ data: { contentfulHeaderBanner }, location }) => {
   const [bioLength, setBioLength] = useState(3);
 
   const [show, setShow] = useState(true);
@@ -88,12 +88,14 @@ const IndexPage = ({ data: { contentfulHeaderBanner, allContentfulArticle }, loc
           </div>
         </div>
       </div>
+      {/* 
+      Removing this section for now
       <div className="Blog-section mt-5">
         <div className="container pt-5">
           <h3>Recent Articles</h3>
           <ArticlePost allContentfulArticle={allContentfulArticle} numPosts={3} />
         </div>
-      </div>
+      </div> */}
       <div className="Contact-us mt-5" id="contact">
         <div className="container mt-3">
           <h3 className="mt-5 pt-5">Contact Me</h3>
@@ -106,6 +108,18 @@ const IndexPage = ({ data: { contentfulHeaderBanner, allContentfulArticle }, loc
 
 export default IndexPage
 
+export const query = graphql`
+query IndexQuery {
+  contentfulHeaderBanner(title: {eq: "DanielJS"}) {
+    title
+    image {
+      gatsbyImageData(width: 1200)
+    }
+  }
+}`;
+
+/*
+Full version with article query
 export const query = graphql`
 query IndexQuery {
   contentfulHeaderBanner(title: {eq: "DanielJS"}) {
@@ -143,3 +157,4 @@ query IndexQuery {
     }
   }
 }`;
+*/
